@@ -91,7 +91,7 @@
 					<div class="col-md-8">
 						<div class="row">
 							<div class="col-md-6 order-md-last align-items-stretch d-flex">
-								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image:asset(images/category.jpg);">
+								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image:url(images/category.jpg);">
 									<div class="text text-center">
 										<h2>Vegetables</h2>
 										<p>Protect the health of every home</p>
@@ -100,12 +100,12 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image:asset(images/category-1.jpg);">
+								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image:url(images/category-1.jpg);">
 									<div class="text px-3 py-1">
 										<h2 class="mb-0"><a href="#">Fruits</a></h2>
 									</div>
 								</div>
-								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image:asset(images/category-2.jpg);">
+								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image:url(images/category-2.jpg);">
 									<div class="text px-3 py-1">
 										<h2 class="mb-0"><a href="#">Vegetables</a></h2>
 									</div>
@@ -115,12 +115,12 @@
 					</div>
 
 					<div class="col-md-4">
-						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image:asset(images/category-3.jpg);">
+						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image:url(images/category-3.jpg);">
 							<div class="text px-3 py-1">
 								<h2 class="mb-0"><a href="#">Juices</a></h2>
 							</div>		
 						</div>
-						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image:asset(images/category-4.jpg);">
+						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image:url(images/category-4.jpg);">
 							<div class="text px-3 py-1">
 								<h2 class="mb-0"><a href="#">Dried</a></h2>
 							</div>
@@ -374,7 +374,7 @@
     	</div>
     </section>
 		
-		<section class="ftco-section img" style="background-image:asset(images/bg_3.jpg);">
+		<section class="ftco-section img" style="background-image:url(images/bg_3.jpg);">
     	<div class="container">
 				<div class="row justify-content-end">
           <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
@@ -408,7 +408,7 @@
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image:asset(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image:url(images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -422,7 +422,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image:asset(images/person_2.jpg)">
+                  <div class="user-img mb-5" style="background-image:url(images/person_2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -436,7 +436,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image:asset(images/person_3.jpg)">
+                  <div class="user-img mb-5" style="background-image:url(images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -450,7 +450,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image:asset(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image:url(images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -464,7 +464,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image:asset(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image:url(images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
