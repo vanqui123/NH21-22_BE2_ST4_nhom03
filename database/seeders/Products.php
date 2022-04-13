@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Faker\Factory as Faker;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -409,38 +409,13 @@ class Products extends Seeder
                 Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.
                 ',
                 'type_id' => '2',
-                'image' => 'buoidaxanh.jpg',
+                'image' => 'buoidanxanh.jpg',
                 'price' => '68000',
                 'discount' => '0',
                 'product_quanity' => '25',
                 'created_at' => '2022-4-7',
             ],
-            [
-                'name' => 'Bưởi da xanh trái từ 1.7kg trở lên ',
-                'description' => 'Thông tin sản phẩm
-                Bơ là loại trái cây chứa nhiều thành phần dinh dưỡng tốt cho cơ thể bao gồm vitamin, khoáng chất và chất chống oxy hóa. Bơ sáp có phần cơm dày, dẻo thơm hấp dẫn phù hợp chế biến rất nhiều món ăn, thức uống thơm ngon, bên cạnh đó còn mang lại hiệu quả làm đẹp rất tốt
-                Bơ là loại trái cây bổ dưỡng, rất dễ tiêu hóa, trái của nó có hình tròn hoặc dài, khi trái chín vỏ có màu xanh hoặc màu tím. Trong quả bơ có rất nhiều thành phần dinh dưỡng tốt cho cơ thể, chứa một lượng dưỡng chất thiết yếu đáng kinh ngạc, bao gồm vitamin, khoáng chất và chất chống oxy hóa. Bơ là loại trái cây nội địa được sử dụng trong nhiều sản phẩm sức khỏe và vẻ đẹp bao gồm cả chất dưỡng tóc, kem mặt và các loại sữa tắm,...
-                Cách sơ chế bơ
-                Mẹo bóc vỏ quả bơ để lấy được hết thịt bơ đơn giản, dễ làm
-                Bơ rửa sạch với nước
-                Dùng dao cắt một đoạn từ phần đỉnh quả bơ xuống dưới đáy. Tách đôi 2 miếng ra
-                Khía một đường dao vào hột của bơ, xoay nhẹ dao để có thể nhấc được hột bơ lên
-                Lột vỏ để lấy phần ruột
-                Các món ăn, đồ uống với bơ
-                Làm món ăn dặm cho bé
-                Đổi vị bữa sáng với bánh mì nướng sốt bơ và sa tế tôm
-                Sinh tố bơ chuối, bơ mãng cầu, bơ sữa chua thơm ngon
-                Đầy đủ dưỡng chất với salad bơ cá hồi
-                Mua ngay trái cây Bách Hóa XANH các loại với vô số sản phẩm giá tốt, chất lượng và an toàn
-                Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.
-                ',
-                'type_id' => '2',
-                'image' => 'bo.jpg',
-                'price' => '55000',
-                'discount' => '0',
-                'product_quanity' => '30',
-                'created_at' => '2022-4-10',
-            ],
+        
             [
                 'name' => 'Nho đen ngon nhập khẩu 500g',
                 'description' => 'Thông tin sản phẩm

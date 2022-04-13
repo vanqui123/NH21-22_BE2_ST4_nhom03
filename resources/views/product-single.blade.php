@@ -14,12 +14,14 @@
 
     <section class="ftco-section">
     	<div class="container">
+		@foreach($data as $value)
     		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="images/product-1.jpg" class="image-popup"><img src="images/{{$value->image}}" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
+
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>Bell Pepper</h3>
+    				<h3>{{$value->name}}</h3>
     				<div class="rating d-flex">
 							<p class="text-left mr-4">
 								<a href="#" class="mr-2">5.0</a>
@@ -72,6 +74,7 @@
 	          		<p style="color: #000;">600 kg available</p>
 	          	</div>
           	</div>
+			  @endforeach
           	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
     			</div>
     		</div>

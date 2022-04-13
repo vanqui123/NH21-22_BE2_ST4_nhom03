@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\WelcomeProduct;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +22,8 @@ use App\Http\Controllers\MainController;
 // Route::get('/{name?}', function ($name) {
 //     return view($name);
 // });
+Route::get('/',[WelcomeProduct::class,'getAllProduct']);
+Route::get('/product-single',[WelcomeProduct::class,'getProductID']);
+
 Route::get('/{name?}',[MainController::class,'navigation']);
+
