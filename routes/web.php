@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\WelcomeProduct;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +22,8 @@ use App\Http\Controllers\WelcomeProduct;
 // Route::get('/{name?}', function ($name) {
 //     return view($name);
 // });
-Route::get('/',[WelcomeProduct::class,'getAllProduct']);
-Route::get('/product-single',[WelcomeProduct::class,'getProductID']);
+Route::get('/',[ProductController::class,'getAllProduct']);
+Route::get('product-single/{id}',[ProductController::class,'getProductID']);
 
 Route::get('/{name?}',[MainController::class,'navigation']);
 

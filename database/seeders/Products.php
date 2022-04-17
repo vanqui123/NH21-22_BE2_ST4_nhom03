@@ -459,219 +459,203 @@ class Products extends Seeder
                 'product_quanity' => '100',
                 'created_at' => '2022-4-8',
             ],
+            //
             [
-                'name' => 'Nước ép Táo Thơm Cà rốt Bạc hà ( không đường ,không đá)',
-                'description' => 'Chế phẩm nước ép làm từ Táo Thơm Cà rốt Bạc hà, nên khi dùng nước ép Táo Thơm Cà rốt Bạc hà, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
+                'name' => 'Nước ép mơ Nectar Rauch 200ml',
+                'description' => 'Nước ép mơ Nectar Rauch 200ml với hương vị thơm ngon hấp dẫn, vị thanh ngọt, tươi mát từ quả mơ tươi giàu vitamin và dinh dưỡng cho cơ thể nguồn năng lượng sảng khoái. Sản phẩm nước ép chất lượng nhà Rauch nhập khẩu từ châu Âu cam kết an toàn và vệ sinh. Đóng chai 200ml tiện dụng
                 ',
                 'type_id' => '3',
-                'image' => 'nuoceptao.jpg',
-                'price' => '50000',
+                'image' => 'nuocepmo.jpg',
+                'price' => '23.200',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-10',
+            ],
+            [
+                'name' => 'Nước ép ổi Juss 1 lít',
+                'description' => 'Sản phẩm nước ép trái cây chất lượng thơm ngon của thương hiệu Juss đến từ Thổ Nhĩ Kỳ. Nước ép ổi Juss 1 lít từ quả ổi tươi ngon chứa nhiều vitamin và dinh dưỡng giúp giải khát nhanh chóng, cung cấp năng lượng cho cơ thể khỏe mạnh đồng thời mang lại hiệu quả làm đẹp da rất tốt
+                ',
+                'type_id' => '3',
+                'image' => 'nuocepoi.jpg',
+                'price' => '30000',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-10',
+            ],
+            [
+                'name' => 'Nước ép ổi hồng Rauch 1 lít',
+                'description' => 'Nước ép ổi hồng Rauch 1 lít thơm ngon bổ dưỡng, giàu vitamin tốt cho sức khỏe. Sản phẩm nước ép chất lượng nhà Rauch nhập khẩu từ Áo, cam kết chính hãng và bảo đảm vệ sinh an toàn. Đóng hộp kín đáo, có nắp đậy, dễ dàng sử dụng và bảo quản
+                ',
+                'type_id' => '3',
+                'image' => 'nuocoihong.jpg',
+                'price' => '65000',
                 'discount' => '0',
                 'product_quanity' => '100',
                 'created_at' => '2022-4-7',
             ],
             [
-                'name' => 'Nước ép Bưởi cam cà rốt củ dền( không đường,không đá )',
-                'description' => 'Chế phẩm nước ép làm từ Bưởi cam cà rốt củ dền, nên khi dùng nước ép Bưởi cam cà rốt củ dền, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
+                'name' => 'Nước ép đào Rauch 1 lít',
+                'description' => 'Nước ép đào Rauch 1 lít thơm ngon bổ dưỡng, giàu vitamin tốt cho sức khỏe với vị đào chua ngọt thanh mát, dễ chịu. Sản phẩm nước ép chất lượng nhà Rauch nhập khẩu từ Áo, cam kết chính hãng và bảo đảm vệ sinh an toàn. Đóng hộp kín đáo, có nắp đậy, dễ dàng sử dụng và bảo quản
                 ',
                 'type_id' => '3',
-                'image' => 'nuocepbuoicam.jpg',
-                'price' => '50000',
+                'image' => 'nuocepdao.jpg',
+                'price' => '78000',
                 'discount' => '0',
                 'product_quanity' => '100',
                 'created_at' => '2022-4-7',
             ],
             [
-                'name' => 'Nước ép Táo xanh dưa leo thơm, (Nguyên Chất 100% - Không Đường - không Đá)',
-                'description' => 'Chế phẩm nước ép làm từ Táo xanh dưa leo thơm, nên khi dùng nước ép Táo xanh dưa leo thơm, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
+                'name' => 'Nước ép táo Juss 1 lít ',
+                'description' => 'Sản phẩm nước ép trái cây chất lượng thơm ngon của thương hiệu Juss đến từ Thổ Nhĩ Kỳ. Nước ép táo Juss 1 lít từ quả ổi tươi ngon chứa nhiều vitamin và dinh dưỡng giúp giải khát nhanh chóng, cung cấp năng lượng, có lợi cho sức khỏe đồng thời mang lại hiệu quả làm đẹp da rất tốt
                 ',
                 'type_id' => '3',
-                'image' => 'nuoceptaodualeo.jpg',
-                'price' => '50000',
+                'image' => 'nuoceptaojuss.jpg',
+                'price' => '44000',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-8',
+            ],
+            [
+                'name' => 'Nước ép cam nguyên chất 100% Rauch 1 lít',
+                'description' => 'Nước ép cam nguyên chất 100% Rauch 1 lít thơm ngon bổ dưỡng, giàu vitamin tốt cho sức khỏe với vị chua thanh mát sảng khoái cung cấp năng lượng cho ngày dài. Sản phẩm nước ép chất lượng nhà Rauch nhập khẩu từ Áo, cam kết chính hãng và bảo đảm vệ sinh an toàn.
+                ',
+                'type_id' => '3',
+                'image' => 'nuocepcam.jpg',
+                'price' => '75000',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-8',
+            ],
+            [
+                'name' => 'Nước ép táo cherry Naturalis Apple - Sour cherry 1 lít',
+                'description' => 'Nước ép trái cây thơm ngon bổ dưỡng từ thương hiệu Naturalis được ưa thích tại Moldova. Nước ép táo cherry Naturalis Apple - Sour cherry 1 lít được làm từ những quả táo và cherry tươi ngon chứa nhiều vitamin và dinh dưỡng giúp giải khát nhanh chóng, bổ sung năng lượng cho cơ thể khỏe mạnh sảng khoái
+                ',
+                'type_id' => '3',
+                'image' => 'nuoceptaocherry.jpg',
+                'price' => '37000',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-8',
+            ],
+            [
+                'name' => 'Nước ép nho Juss 1 lít ',
+                'description' => 'Sản phẩm nước ép trái cây chất lượng thơm ngon của thương hiệu Juss đến từ Thổ Nhĩ Kỳ. Nước ép nho Juss 1 lít từ quả nho tươi ngon chứa nhiều vitamin và dinh dưỡng giúp giải khát nhanh chóng, cung cấp năng lượng, có lợi cho sức khỏe đồng thời mang lại hiệu quả làm đẹp da rất tốt
+                ',
+                'type_id' => '3',
+                'image' => 'nuocepnho.jpg',
+                'price' => '30000',
+                'discount' => '0',
+                'product_quanity' => '100',
+                'created_at' => '2022-4-8',
+            ],
+            [
+                'name' => 'Nước ép lê Juss 1 lít ',
+                'description' => 'Sản phẩm nước ép trái cây chất lượng thơm ngon của thương hiệu Juss đến từ Thổ Nhĩ Kỳ. Nước ép lê Juss 1 lít từ quả lê tươi ngon chứa nhiều vitamin và dinh dưỡng giúp giải khát nhanh chóng, cung cấp năng lượng cho cơ thể khỏe mạnh đồng thời mang lại hiệu quả làm đẹp da rất tốt
+                ',
+                'type_id' => '3',
+                'image' => 'nuoceple.jpg',
+                'price' => '30000',
                 'discount' => '0',
                 'product_quanity' => '100',
                 'created_at' => '2022-4-7',
             ],
+
             [
-                'name' => 'Nước Ép dưa Lưới, bạc hà, chanh',
-                'description' => 'Chế phẩm nước ép làm từ dưa Lưới, bạc hà, chanh, nên khi dùng nước ép dưa Lưới, bạc hà, chanh, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuocepdualuoi.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-7',
-            ],
-            [
-                'name' => 'Nước ép Cà rốt - thơm - chanh - bạc hà ( không đường ,không đá ) ',
-                'description' => 'Chế phẩm nước ép làm từ Cà rốt - thơm - chanh - bạc hà, nên khi dùng nước ép Cà rốt - thơm - chanh - bạc hà,  bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuocepcarot.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-8',
-            ],
-            [
-                'name' => 'Nước ép Cà rốt cà chua dưa leo (Nguyên Chất 100% - Không Đường - không Đá)',
-                'description' => 'Chế phẩm nước ép làm từ Cà rốt cà chua dưa leo, nên khi dùng nước ép Cà rốt cà chua dưa leo, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuocepcarotdualeo.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-8',
-            ],
-            [
-                'name' => 'Nước ép Táo xanh Cà rốt gừng ( không đường , không đá ) ',
-                'description' => 'Chế phẩm nước ép làm từ Táo xanh Cà rốt gừng, nên khi dùng nước ép Táo xanh Cà rốt gừng, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuoceptaoxanhcarot.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-8',
-            ],
-            [
-                'name' => 'Nước ép Táo + Lê 100% nguyên chất, không đường, không đá ',
-                'description' => 'Chế phẩm nước ép làm từ ép Táo + Lê, nên khi dùng nước ép ép Táo + Lê, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuoceptaole.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-8',
-            ],
-            [
-                'name' => 'Nước ép Cần tây , cải bó xôi , táo xanh , carot , chanh (không đường, không đá) ',
-                'description' => 'Chế phẩm nước ép làm từ Cần tây , cải bó xôi , táo xanh , carot , chanh, nên khi dùng nước ép Cần tây , cải bó xôi , táo xanh , carot , chanh, bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuocepcantay.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-7',
-            ],
-            [
-                'name' => ' Nước ép Cần tây, cải bó xôi , dưa leo , cam (không đường, không đá) ',
-                'description' => 'Chế phẩm nước ép làm từ Cần tây, cải bó xôi , dưa leo , cam, nên khi dùng nước ép Cần tây, cải bó xôi , dưa leo , cam,  bên cạnh việc kiểm soát cân nặng hiệu quả, chúng ta có thể tận dụng được những lợi ích sức khỏe quan trọng khác.
-                ',
-                'type_id' => '3',
-                'image' => 'nuocepcantaydualeo.jpg',
-                'price' => '50000',
-                'discount' => '0',
-                'product_quanity' => '100',
-                'created_at' => '2022-4-8',
-            ],
-            [
-                'name' => 'HẠT MACCA NỮ HOÀNG 250G',
-                'description' => 'Hạt macca là loại hạt có giá trị dinh dưỡng cao, phù hợp với tất cả mọi người. Sản phẩm mang lại nhiều năng lượng và lợi ích về sức khỏe cho người sử dụng. Hạt Macadamia Nữ Hoàng sử dụng 100% hạt Macca thiên nhiên được rang khô nứt vỏ, được đóng gói an toàn, hợp vệ sinh, đảm bảo độ tự nhiên và chất lượng sản phẩm.  Hạt Macadamia có chứa hơn 20 loại chất khoáng chất thiết yếu, rất giàu vitamin, Omega-3 và chất chống ôxy hóa. Nhờ đó, hỗ trợ bảo vệ hệ tim mạch, tốt cho não và hoạt động của hệ thần kinh, tăng cường đề kháng chống lại bệnh tật, hỗ trợ giảm cân, hỗ trợ tiêu hóa, tăng cường sức khỏe đường ruột, tăng cường mật độ xương, giảm viêm mãn tính, điều trị viêm khớp, đặc biệt tốt cho phụ nữ mang thai và trẻ nhỏ.
+                'name' => 'Hạt hướng dương vị dừa Chacheer gói 130g',
+                'description' => 'Hạt hướng dương thơm ngon, với lớp vỏ ngoài được gia vị đậm đà, mặn mặn kích thích vị giác. Hương dừa khi ăn cũng khá là thơm. Hạt hướng dương vị dừa Chacheer gói 130g không bị hôi dầu, ăn vặt, giải trí rất phù hợp. Hạt khô Chacheer được sản xuất tại Thái Lan an toàn, chất lượng
                 ',
                 'type_id' => '4',
-                'image' => 'hatmaca.jpg',
-                'price' => '1385000',
+                'image' => 'hathuongduong.jpg',
+                'price' => '20000',
                 'discount' => '0',
                 'product_quanity' => '50',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'HỖN HỢP HẠT DINH DƯỠNG PETE 100G',
-                'description' => 'Các loại hạt và trái cây khô trộn với nhau tạo thành một món snack lành mạnh, ngon – lý tưởng cho chuyến đi bộ đường dài & cũng, cũng thật tuyệt vời cho những phút giây thư giãn trên bãi biển!.
+                'name' => 'Hạt hạnh nhân tẩm wasabi Toms Farm túi 210g',
+                'description' => 'Hạt hạnh nhân được tẩm wasabi lạ miệng, thơm thơm hấp dẫn. Hạt hạnh nhân tẩm wasabi Toms Farm gói 210g  khi ăn có vị béo béo của hạnh nhân cũng như chút the the của wasabi, kích thích vị giác. Hạt khô Toms Farm được sản xuất tại Hàn Quốc, phù hợp cho ăn vặt, thưởng trà
                 ',
                 'type_id' => '4',
-                'image' => 'hatpete.jpg',
-                'price' => '79900',
+                'image' => 'hathanhnhan.jpg',
+                'price' => '124900',
                 'discount' => '0',
                 'product_quanity' => '50',
                 'created_at' => '2022-4-5',
             ],
             [
-                'name' => 'HẠT SEN HUẾ 100G',
-                'description' => 'Hạt sen cung cấp cho cơ thể những dưỡng chất cần thiết như protit, lipit, gluxit, canxi, photpho, sắt,…Hạt sen rất giàu các vitamin B1, vitamin B2, vitamin PP, vitamin C…Hàm lượng mỡ bão hòa, natri và cholesterol trong hạt sen rất thấp.
-                Hạt sen có tác dụng tăng cường chức năng tỳ vị, đảm bảo dinh dưỡng cho cơ thể, điều hòa sự thu nạp thức ăn.
-                bổ sung chất khoáng, chất xơ và đặc biệt phù hợp với chế độ ăn kiêng.
-                Ăn hạt sen chữa mất ngủ, thiếu máu, kén ăn, làm đẹp da, chống lão hóa
-                Hạt sen còn giàu hàm lượng kaempferol, một chất flavonoid tự nhiên rất hữu ích, có tác dụng ngăn ngừa viêm nhiễm, đặc biệt là tác dụng chống viêm các mô lợi, nhất là ở nhóm người cao niên.
+                'name' => ': Hạt óc chó Chile Your Superfood gói 200g',
+                'description' => 'Hạt khô các loại Your Superfood thơm ngon, tốt cho sức khỏe người dùng. Hạt óc chó Chile Your Superfood gói 200g được nhập khẩu từ Chile có tác dụng chống oxy hóa, giàu khoáng chất và vitamin tốt cho sức khỏe. Hạt mang vị béo đặc trưng mềm tan trong khỏe miệng ngay lần đầu chạm.
                 ',
                 'type_id' => '4',
-                'image' => 'hatsen.jpg',
-                'price' => '95500',
+                'image' => 'hatoccho.jpg',
+                'price' => '126000',
                 'discount' => '0',
                 'product_quanity' => '60',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'HẠT CÂY GAI DẦU HỮU CƠ HEMP FOODS 250G',
-                'description' => 'Hạt gai dầu Hemp food là một sản phẩm thân thiện với môi trường và phát triển bền vững, được trồng mà không sử dụng thuốc trừ sâu hoặc thuốc diệt cỏ. Chúng được sản xuất một cách cẩn thận sử dụng một quá trình lạnh để đảm bảo các enzym và chất dinh dưỡng vẫn còn nguyên vẹn, mang lại chất lượng hạt cây gai dầu cao nhất, tinh khiết nhất. hưởng thức hạt cây gai dầu bằng cách ăn trực tiếp hoặc rắc trên salad, súp hoặc bất kỳ món ăn ngọt hoặc mặn. Xay trong smoothies hay làm sữa gai dầu của riêng bạn!
+                'name' => 'Hạt óc chó Chile Your Superfood gói 500g',
+                'description' => 'Hạt khô Your Food an toàn chất lượng. Hạt óc chó Chile Your Superfood gói 500g mang giá trị dinh dưỡng cao, giúp ngăn ngừa các bệnh về tim mạch, tốt cho phụ nữ mang thai và em bé. Đặc biệt, đây là loại hạt khô giúp ngăn ngừa lão hóa da, giảm cân hiệu quả.
                 ',
                 'type_id' => '4',
-                'image' => 'hatgaidau.jpg',
-                'price' => '379900',
+                'image' => 'hatoccho500g.jpg',
+                'price' => '326900',
                 'discount' => '0',
                 'product_quanity' => '30',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'ĐẬU LĂNG XANH HỮU CƠ ARROWHEAD MILL 450G',
-                'description' => 'Đậu lăng xanh tốt cho hệ tiêu hóa, thần kinh, có tác dụng hỗ trợ ngăn ngừa các bệnh tim mạch, ung thư.
-                Thành phần: 100% đậu lăng xanh hữu cơ được chứng nhận USDA
-                Hướng dẫn sử dụng: Có thể sử dụng để chế biến các món súp, salad.
+                'name' => 'Hạt Macca Úc nứt vỏ Your Superfood hủ 360g',
+                'description' => 'Hạt khô các loại Your Superfood thơm ngon, chất lượng là sự lựa hoàn hảo cho bạn. Hạt Macca Úc nứt vỏ Your Superfood hũ 360g với những hạt macca được chọn lựa kỹ và nhập khẩu từ Úc chất lượng, giàu dưỡng chất tốt cho sức khỏe. Hạt mang vị béo đặc trưng bùi bùi kích thích vị giác người dùng.
 
                 ',
                 'type_id' => '4',
-                'image' => 'daulang.jpg',
-                'price' => '139900',
+                'image' => 'hatmaccauc.jpg',
+                'price' => '130000',
                 'discount' => '0',
                 'product_quanity' => '25',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'HẠT LÚA MẠCH HỮU CƠ ARROWHEAD MILL 794G',
-                'description' => 'Sản phẩm có nhiều vitamin, sắt, cung cấp nhiều năng lượngcho cơ thể. Ngoài ra hạt lúa mạch hữu cơ còn tốt cho hệ tiêu hóa, thần kinh, có tác dụng hỗ trợ ngăn ngừa các bệnh tim mạch, ung thư. Có thể sử dụng để nấu cơm, chế biến các món hầm hoặc nấu chè.
+                'name' => 'Hạt hạnh nhân tẩm yogurt Toms Farm túi 210g',
+                'description' => 'Hạt hạnh nhân được tẩm yogurt lạ miệng, thơm thơm hấp dẫn. Hạt hạnh nhân tẩm yogurt Toms Farm túi 210g khi ăn có vị béo béo của hạnh nhân cũng như chút ngọt ngảo cảu yogurt, kích thích vị giác. Hạt khô Toms Farm được sản xuất tại Hàn Quốc, phù hợp cho ăn vặt, thưởng trà
                 ',
                 'type_id' => '4',
-                'image' => 'hatluamach.jpg',
-                'price' => '165000',
+                'image' => 'hathanhnhantam.jpg',
+                'price' => '142000',
                 'discount' => '0',
                 'product_quanity' => '30',
                 'created_at' => '2022-4-5',
             ],
             [
-                'name' => 'Hạt hồ đào nguyên vỏ cao cấp của Mỹ',
-                'description' => 'Hạt hồ đào nguyên vỏ Mỹ là loại hạt dinh dưỡng thơm ngon, có thể sử dụng trực tiếp sau khi bóc lớp vỏ bên ngoài mà không phải tốn công chế biến. Hạt hồ đào chứa nhiều dưỡng chất rất tốt cho sức khỏe người tiêu dùng.
-                Hạt hồ đào nguyên vỏ Mỹ là loại hạt dinh dưỡng được khá nhiều người biết đến. Đây là món quà tặng rất ý nghĩa đối với người thân trong gia đình để nâng cao sức khỏe, tuổi thọ. Quý khách hãy đến với Sod
+                'name' => 'Đậu Hà Lan bao mực Tong Garden gói 50g',
+                'description' => 'Hạt đậu Hà Lan ăn rất béo, thơm nhẹ và được bao bởi lớp bột hương mực thơm ăn không ngán. Đậu Hà Lan bao mực Tong Garden gói 50g tiện lợi, hấp dẫn thưởng thức, phù hợp cho xem phim, đọc sách và thưởng thức. Hạt Tong Garden có thể sử dụng trực tiếp hoặc làm nguyên liệu cho những món ăn khác.
                 ',
                 'type_id' => '4',
-                'image' => 'hathodao.jpg',
+                'image' => 'dauhalan.jpg',
                 'price' => '85000',
                 'discount' => '0',
                 'product_quanity' => '25',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'Hạt Đậu đen',
-                'description' => 'Đậu đen được xếp vào thực phẩm có nguồn gốc từ thực vật loại đậu. Còn được gọi là đậu rùa vì bề ngoài cứng như mai, đậu đen thực chất là hạt ăn được của cây. Đậu đen được đánh giá cao vì hàm lượng protein và chất xơ cao. Đậu đen còn chứa một số vitamin và khoáng chất quan trọng khác được biết là có lợi cho sức khỏe con người.
+                'name' => 'Hạt dinh dưỡng Healthy Mix Your Superfood gói 500g',
+                'description' => 'Hạt khô Your Superfood mang đến những loại hạt thơm ngon giàu dưỡng chất cần thiết, tốt cho sức khỏe người dùng. Hạt dinh dưỡng Healthy Mix Your Superfood gói 500g với sự kết hơp tuyệt vời của các loại hạt đã tạo nên một món ăn vặt ngon đúng điệu lại tốt cho sức khỏe người sử dụng. 
                 ',
                 'type_id' => '4',
-                'image' => 'hatdauden.jpg',
-                'price' => '45000',
+                'image' => 'hatdinhduong.jpg',
+                'price' => '298000',
                 'discount' => '0',
                 'product_quanity' => '25',
                 'created_at' => '2022-4-6',
             ],
             [
-                'name' => 'Hạt Đác',
-                'description' => 'Hạt đác là loại hạt của cây đác – là một loại cây sống chủ yếu ở vùng Nam Trung Bộ như: Nha Trang (Khánh Hòa), Phú Yên. Quả đác có hình dáng giống như quả dừa nhưng bé hơn, quả kết thành từng buồng lớn, mỗi quả có 3 – 4 hạt. Hạt đác sau khi được tách vỏ sẽ có da trơn láng, màu trắng tự nhiên, vị ngọt mát có chút béo bùi, giòn sần sật.
+                'name' => 'Hạnh nhân nguyên vỏ Noberasco gói 100g',
+                'description' => 'Hạnh nhân béo thơm, giàu chất dinh dưỡng được giữ nguyên lớp vỏ lụa đem rang lên thơm phưng phức. Hạnh nhân nguyên vỏ Noberasco gói 100g có vị béo ngậy, rất hấp dẫn. Hạt khô Noberasco chất lượng, an toàn và tiện lợi, thích hợp ăn vặt hoặc làm bánh.
                 ',
                 'type_id' => '4',
-                'image' => 'hatdat.jpg',
-                'price' => '70000',
+                'image' => 'hanhnhan.jpg',
+                'price' => '89000',
                 'discount' => '0',
                 'product_quanity' => '25',
                 'created_at' => '2022-4-5',
