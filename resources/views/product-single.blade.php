@@ -14,10 +14,10 @@
 
     <section class="ftco-section">
     	<div class="container">
-		
+
     		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="" class="image-popup"><img src="../images/{{ $product_detail['image']}}" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="" class="image-popup"><img src="../images/{{$product_detail['image'] }}" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
 
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
@@ -39,7 +39,7 @@
 							</p>
 						</div>
     				<p class="price"><span>{{$product_detail['price']}}</span></p>
-    				<p> {{$product_detail['description']}}
+    				<p> {{$product_detail['description']}}</p>
 						</p>
 						<div class="row mt-4">
 							<div class="col-md-6">
@@ -74,6 +74,7 @@
 	          		<p style="color: #000;">600 kg available</p>
 	          	</div>
           	</div>
+			
 			  
           	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
     			</div>
@@ -93,8 +94,9 @@
     	</div>
     	<div class="container">
     		<div class="row">
-				@@foreach ($type_products as $value)
+			@foreach ($type_products as $value)
     			<div class="col-md-6 col-lg-3 ftco-animate">
+				
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="../images/{{$value->image}}" alt="Colorlib Template">
     						<span class="status">30%</span>
@@ -104,7 +106,7 @@
     						<h3><a href="#">{{$value->name}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">{{$value->price}}</span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-sale">{{$value->price}}</span><span class="price-dc">$80.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -122,8 +124,9 @@
     						</div>
     					</div>
     				</div>
+					
     			</div>
-				@@endforeach
+				@endforeach
     		
     		</div>
     	</div>

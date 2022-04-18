@@ -13,11 +13,8 @@ class ProductController extends Controller
     function getProductID($id){
         $product = Product::where('id',$id)->first(); 
         $type_id = $product->type_id;
-        echo $type_id;
-        $type_product = Product::where('type_id',$type_id)->get();
-        return view('product-single')
-        ->with(['product_detail'=>$product])
-        ->with(['type_products'=>$type_product]);
+        $type_product = Product::where('type_id',$type_id)->limit(4)->get();
+        return view('product-single',['type_products'=>$type_product,'product_detail'=>$product]);
     }
   
 }
