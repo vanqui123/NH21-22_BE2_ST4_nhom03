@@ -1,3 +1,8 @@
+<?php  use App\Http\Controllers\CartController;
+use App\Models\Cart;
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,8 +79,10 @@
 	          <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-
+     
+      <form action="{{url('load-cart-data')}}" method="get">
+	          <li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span class="icon-shopping_cart cart_count">0</span></a></li>
+            </form>
 	        </ul>
 	      </div>
 	    </div>
@@ -179,6 +186,9 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false "></script>
   <script src="{{asset('js/google-map.js')}}"></script>
   <script src="{{asset('js/main.js')}}"></script>
+
+
+  @stack('footer-script')
   
   </body>
 </html>

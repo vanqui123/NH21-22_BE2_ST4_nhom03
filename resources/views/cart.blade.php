@@ -28,46 +28,36 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-3.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
-						        </td>
-						        
-						        <td class="price">$4.90</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-					          	</div>
-					          </td>
-						        
-						        <td class="total">$4.90</td>
+						
 						      </tr><!-- END TR-->
-
+							  @php $sum  =0;@endphp
+								@foreach ($carts as $cart)
+							@php	$sum += $cart->price @endphp
 						      <tr class="text-center">
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
+							<td>
+								{{$cart->order_id}}
+                                  <button class="px-4 py-2 text-white bg-red-600 btn-remove" data-id="{{$cart->id}}">x</button>
+                           </td>        
+						        <td class="image-prod"><div class="img" style="background-image:url(images/{{ $cart->image}});"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Bell Pepper</h3>
-						        	<p>Far far away, behind the word mountains, far from the countries</p>
+						        	<h3>{{$cart->product_name}}</h3>
 						        </td>
 						        
-						        <td class="price">$15.70</td>
+						        <td><input type="checkbox" name="select_product[]"></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+					             	<input type="text" name="quantity" class="quantity form-control input-number" value="{{$cart->quanity}}" min="1" max="100">
 					          	</div>
 					          </td>
 						        
-						        <td class="total">$15.70</td>
+						        <td class="total">{{$cart->price}}</td>
+								@endforeach
+								<form action="{{ route('cart.clear') }}" method="POST">
+                            @csrf
+                            <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
+                          </form>
 						      </tr><!-- END TR-->
 						    </tbody>
 						  </table>
@@ -114,7 +104,7 @@
     					<h3>Cart Totals</h3>
     					<p class="d-flex">
     						<span>Subtotal</span>
-    						<span>$20.60</span>
+    						<span>0</span>
     					</p>
     					<p class="d-flex">
     						<span>Delivery</span>
@@ -122,12 +112,12 @@
     					</p>
     					<p class="d-flex">
     						<span>Discount</span>
-    						<span>$3.00</span>
+    						<span>0</span>
     					</p>
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
-    						<span>$17.60</span>
+    						<span>{{$sum}}</span>
     					</p>
     				</div>
     				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
@@ -156,40 +146,66 @@
     </section>
  
   <script>
-		$(document).ready(function(){
+	//   const btnClose = document.querySelector('.btn-close')
+	  
 
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
+
+
+	// 	$(document).ready(function(){
+
+	// 	var quantitiy=0;
+	// 	   $('.quantity-right-plus').click(function(e){
 		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
+	// 	        // Stop acting like a button
+	// 	        e.preventDefault();
+	// 	        // Get the field name
+	// 	        var quantity = parseInt($('#quantity').val());
 		        
-		        // If is not undefined
+	// 	        // If is not undefined
 		            
-		            $('#quantity').val(quantity + 1);
+	// 	            $('#quantity').val(quantity + 1);
 
 		          
-		            // Increment
+	// 	            // Increment
 		        
-		    });
+	// 	    });
 
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
+	// 	     $('.quantity-left-minus').click(function(e){
+	// 	        // Stop acting like a button
+	// 	        e.preventDefault();
+	// 	        // Get the field name
+	// 	        var quantity = parseInt($('#quantity').val());
 		        
-		        // If is not undefined
+	// 	        // If is not undefined
 		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
+	// 	            // Increment
+	// 	            if(quantity>0){
+	// 	            $('#quantity').val(quantity - 1);
+	// 	            }
+	// 	    });
 		    
-		});
+	// 	});
+
+
+
 	</script>
     
 @endsection
+@push('footer-script')
+<script>
+$('.btn-remove').on('click', function() {
+	if(confirm('Are you sure you want to remove')){
+		var id = $(this).data('id');
+		$.ajax({
+			url:'{{route("cart.delete")}}',
+			data:{'id':id},
+			success: function(data){
+				location.reload(); 
+			}
+			
+		})
+	}
+});
+
+</script>
+@endpush

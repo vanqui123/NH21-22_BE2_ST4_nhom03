@@ -13,6 +13,7 @@
     </div>
 
     <section class="ftco-section">
+
     	<div class="container">
 
     		<div class="row">
@@ -56,15 +57,26 @@
 		            </div>
 							</div>
 							<div class="w-100"></div>
-							<div class="input-group col-md-6 d-flex mb-3">
+							
+	<form method="POST" action="{{ route('cart.store') }}" enctype="multipart/form-data">
+	@csrf
+			<div class="input-group col-md-6 d-flex mb-3">
 	             	<span class="input-group-btn mr-2">
 	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
 	                   <i class="ion-ios-remove"></i>
 	                	</button>
 	            		</span>
+						<input type="hidden"  value="{{$product_detail['product_id']}}" name="product_id">
+	             	<input type="hidden"  value="{{$product_detail['name']}}" name="name">
+	             	<input type="hidden"  value="{{$product_detail['price']}}" name="price">
 	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-	             	<span class="input-group-btn ml-2">
+					 <input type="hidden"  value="{{$product_detail['image']}}" name="image">
+
+
+	            
+					 <span class="input-group-btn ml-2">
 	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+					
 	                     <i class="ion-ios-add"></i>
 	                 </button>
 	             	</span>
@@ -74,12 +86,13 @@
 	          		<p style="color: #000;">600 kg available</p>
 	          	</div>
           	</div>
-			
-			  
-          	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+          	<p  class="btn btn-black py-3 px-5"><button type="submit" >Add to Cart</button></p>
+		
     			</div>
     		</div>
+			</form>
     	</div>
+	
     </section>
 
     <section class="ftco-section">
