@@ -14,14 +14,17 @@ use App\Http\Controllers\CartController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// Route::get('/{name?}', function ($name) {
-//     return view($name);
-// });
+require __DIR__.'/auth.php';
+
+
 Route::get('/',[ProductController::class,'getAllProduct']);
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
 
@@ -38,4 +41,3 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 
 Route::get('/{name?}',[MainController::class,'navigation']);
-

@@ -79,7 +79,22 @@ use App\Models\Cart;
 	          <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
-     
+            <li class="nav-item"><div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+            @if (Route::has('login'))
+                <div class=" fixed top-0 right-0 px-6 py-4 sm:block" style=" padding-top: 1rem !important; ">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                        @endif
+                    @endif
+                </div>
+            @endif
+       
+        </div></li>
       <form action="{{url('load-cart-data')}}" method="get">
 	          <li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span class="icon-shopping_cart cart_count">0</span></a></li>
             </form>
