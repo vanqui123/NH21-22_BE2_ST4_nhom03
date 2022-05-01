@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +40,8 @@ Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('cart/delete', [CartController::class, 'destroy'])->name('cart.delete');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
+//Contact 
+Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
 
 
 Route::get('/{name?}',[MainController::class,'navigation']);
