@@ -17,27 +17,32 @@
     		<div class="row justify-content-center">
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
-				
-    					<li><a href="#" class="active">All</a></li>
-						@foreach($type as $value)
-    					<li><a href="shop/{{$value->type_id}}">{{$value->type_name}}</a></li>
+					<li><a href="shop" class="active">All</a></li>
+					@foreach ($type as $value)
+    					
+    					<li><a href="shop?type_id={{$value->type_id}}">{{$value->type_name}}</a></li>
+
 						@endforeach
+					
+    					
+					
     				</ul>
     			</div>
     		</div>
     		<div class="row">
-
+			@if(!isset($_GET['type_id']))
+			@foreach($data as $value)
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/{{ $value->image}}" alt="Colorlib Template">
     						<span class="status">30%</span>
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"></a></h3>
+    						<h3><a href="#">{{$value->name}}</a></h3>
     						<div class="d-flex"	>	
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">$80.00</span></p>
+		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$value->price}}</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -56,7 +61,44 @@
     					</div>
     				</div>
     			</div>
-	
+			@endforeach
+		
+			
+			@elseif (isset($_GET['type_id']))
+
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/{{ $product_type['image']}}" alt="Colorlib Template">
+    						<span class="status">30%</span>
+    						<div class="overlay"></div>
+    					</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">{{$product_type['name']}}</a></h3>
+    						<div class="d-flex"	>	
+    							<div class="pricing">
+		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$product_type['price']}}</span></p>
+		    					</div>
+	    					</div>
+	    					<div class="bottom-area d-flex px-3">
+	    						<div class="m-auto d-flex">
+	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    								<span><i class="ion-ios-menu"></i></span>
+	    							</a>
+	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    								<span><i class="ion-ios-cart"></i></span>
+	    							</a>
+	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
+	    								<span><i class="ion-ios-heart"></i></span>
+	    							</a>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+		
+			@endif
+			
+			 
     		
 
     		</div>

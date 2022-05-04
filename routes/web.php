@@ -5,6 +5,8 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProtypeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +32,9 @@ require __DIR__.'/auth.php';
 Route::get('/',[ProductController::class,'getAllProduct']);
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
 
-Route::get('shop',[ProductController::class,'getAllProductType']);
-Route::get('shop',[ProductController::class,'getType']);
-Route::get('shop/{type_id}',[ProductController::class,'getProductType_id']);
+Route::get('shop',[ProtypeController::class,'getAllProductType']);
+
+Route::get('shop/{type_id}',[ProtypeController::class,'getProductType_id']);
 
 Route::get('load-cart-data', [CartController::class, 'cartCount']);
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
