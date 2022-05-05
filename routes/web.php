@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
@@ -46,11 +47,15 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 //Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
-
+Route::get('blog', [BlogController::class, 'getAllBlog']);
 
 Route::get('/{name?}',[MainController::class,'navigation']);
 
 //Search func
 Route::post('/search', [SearchController::class, 'search']);
+
+//Lấy ds blog
+
+
 
 
