@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProtypeController;
+use App\Http\Controllers\SearchController;
+
 
 
 /*
@@ -42,8 +44,13 @@ Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('cart/delete', [CartController::class, 'destroy'])->name('cart.delete');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
-//Contact 
+//Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
 
 
 Route::get('/{name?}',[MainController::class,'navigation']);
+
+//Search func
+Route::post('/search', [SearchController::class, 'search']);
+
+

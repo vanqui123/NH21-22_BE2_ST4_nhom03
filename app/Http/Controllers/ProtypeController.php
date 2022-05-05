@@ -14,9 +14,11 @@ class ProtypeController extends Controller
         return view('shop',['product_type'=>$product_typeid]);
     }
     function getAllProductType(){
+        
         $products = Product::limit(12)->get();
         $type = Protype::All();
         return view('shop',['data'=>$products,'type'=>$type]);
     }
+   
 
 }

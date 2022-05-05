@@ -7,9 +7,10 @@ use App\Models\Product;
 use App\Models\Protype;
 
 class ProductController extends Controller
-{
+{   
     function getAllProduct(){
         $products = Product::limit(12)->get();
+
         return view('index',['data'=>$products]);
     }
     function getProductID($product_id){
