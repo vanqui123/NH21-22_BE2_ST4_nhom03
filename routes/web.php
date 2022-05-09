@@ -32,7 +32,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/',[ProductController::class,'getAllProduct']);
+Route::get('/',[ProductController::class,'getAllProduct'])->name('index');
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
 
 Route::get('shop',[ProtypeController::class,'getAllProductType']);

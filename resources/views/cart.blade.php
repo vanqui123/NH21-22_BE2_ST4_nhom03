@@ -38,7 +38,7 @@
 								{{$cart->order_id}}
                                   <button class="px-4 py-2 text-white bg-red-600 btn-remove" data-id="{{$cart->id}}">x</button>
                            </td>        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/{{ $cart->image}});"></div></td>
+						        <td class="image-prod"><div class="img" style="background-image:url(images/{{$cart->image}});"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3>{{$cart->product_name}}</h3>
