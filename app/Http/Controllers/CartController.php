@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class CartController extends Controller
 {
@@ -40,13 +41,28 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
-
+    public function increaseQuantity(Request $request){
+        $id = $request->id;
+        $product = Cart::where('id',$id)->get();
+        $product1=$product;
+        // dd($product1);
+     $qty = $product1->quanity;
+        Cart::update($id, $qty);
+        return redirect()->route('cart.list');
+    }
+    public function decreaseQuantity(Request $request){
+        $id = $request->id;
+        $product = Cart::get($id);
+        $qty = $product->quanity - 1;
+        Cart::update($id, $qty);
+        return redirect()->route('cart.list');
+    }
     // public function updateCart(Request $request)
     // {
     //    \Cart::update(
     //         $request->id,
     //         [
-    //             'quantity' => [
+    //              'quantity' => [
     //                 'relative' => false,
     //                 'value' => $request->quantity
     //             ],
@@ -63,6 +79,7 @@ class CartController extends Controller
         $id = $request->id;
         $cart = Cart::where('id',$id)->first();
         $cart->delete();
+        return redirect()->route('cart.list');
     }
 
     public function cartCount(){

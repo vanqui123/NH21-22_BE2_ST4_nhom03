@@ -22,6 +22,7 @@
 						        <th>&nbsp;</th>
 						        <th>&nbsp;</th>
 						        <th>Product name</th>
+						        <th>Slect</th>
 						        <th>Price</th>
 						        <th>Quantity</th>
 						        <th>Total</th>
@@ -30,29 +31,57 @@
 						    <tbody>
 						
 						      </tr><!-- END TR-->
-							  @php $sum  =0;@endphp
+							  @php $sum  =0;
+							 	$total = 0; 
+							  @endphp
 								@foreach ($carts as $cart)
-							@php	$sum += $cart->price @endphp
-						      <tr class="text-center">
+							@php	$sum += $cart->price;
+								
+								$total =$cart->price * $cart->quanity;
+							@endphp
+					
+							<tr class="text-center">
 							<td>
-								{{$cart->order_id}}
-                                  <button class="px-4 py-2 text-white bg-red-600 btn-remove" data-id="{{$cart->id}}">x</button>
+						
+								<form action="{{route('cart.delete')}}" method="get" enctype="multipart/form">
+									@csrf
+                                  <button class="px-4 py-2 text-white bg-red-600 btn-remove" >x</button>
+								  <input type="hidden" value="{{$cart->id}}" name="id"/>
+								  </form>
                            </td>        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/{{ $cart->image}});"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3>{{$cart->product_name}}</h3>
 						        </td>
-						        
-						        <td><input type="checkbox" name="select_product[]"></td>
+							
+								<td><input type="checkbox" name="select_product[]" cart-id="{{$cart->id}}"></td>
+						        <input type="hidden" id="token" value="{{ csrf_token() }}">
+								<td class="price">{{$cart->price}}</td>
+						       
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
+							<form action="{{route('cart.update')}}" method="get">
+								@csrf
+									<span class="input-group-btn mr-2">
+										<input type="hidden" value="{{$cart->id}}" name="id"/>
+										<button  type="submit" class="quantity-left-minus btn btn_left"  data-type="minus" data-field="">
+									<i class="ion-ios-remove"></i>
+										</button>
+										</span>
+										</form>
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="{{$cart->quanity}}" min="1" max="100">
+									
+									 <span class="input-group-btn ml-2">
+									<button  type="button" class="quantity-right-plus btn btn_right" data-type="plus" data-field="">
+									<i class="ion-ios-add"></i>
+								</button>
+	           			  	</span>
 					          	</div>
 					          </td>
 						        
-						        <td class="total">{{$cart->price}}</td>
+						        <td class="total">{{$total}}</td>
 								@endforeach
 								<form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
@@ -120,8 +149,9 @@
     						<span>{{$sum}}</span>
     					</p>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+    				<p class="btn btn-primary py-3 px-4 buy_product"> Proceed to Checkout </s></p>
     			</div>
+			
     		</div>
 			</div>
 		</section>
@@ -193,19 +223,31 @@
 @endsection
 @push('footer-script')
 <script>
-$('.btn-remove').on('click', function() {
-	if(confirm('Are you sure you want to remove')){
-		var id = $(this).data('id');
-		$.ajax({
-			url:'{{route("cart.delete")}}',
-			data:{'id':id},
+	
+	$('.buy_product').on('click', function(){
+		var cart_id = [];
+		var token=document.getElementById('token').value;
+		jQuery('input[name="select_product[]"]:checkbox:checked').each(function(i){
+				cart_id[i] = $(this).attr('cart-id');
+		});
+		if(cart_id.length == 0)
+		{
+			alert('Please select atleast one product');
+		}else{
+			$.ajax({	
+			url:'{{route("product")}}',
+			type:'GET',
+			data:{
+				'cart_id':cart_id,
+				'_token':token
+			},
 			success: function(data){
-				location.reload(); 
+				location.reload();
 			}
-			
-		})
-	}
-});
+		});
+		}
+		
+	});
 
 </script>
 @endpush

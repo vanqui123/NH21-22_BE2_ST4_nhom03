@@ -98,13 +98,17 @@
 	          </form><!-- END -->
 					</div>
 					<div class="col-xl-5">
+					@php $sum  =0;@endphp
+				@foreach ($data as $value)
+				@php	$sum += $value->price @endphp
+				@endforeach
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
 	          		<div class="cart-detail cart-total p-3 p-md-4">
 	          			<h3 class="billing-heading mb-4">Cart Total</h3>
 	          			<p class="d-flex">
 		    						<span>Subtotal</span>
-		    						<span>$20.60</span>
+		    						<span>{{$sum}} vnđ</span>
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Delivery</span>
@@ -117,7 +121,7 @@
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>Total</span>
-		    						<span>$17.60</span>
+		    						<span>{{$sum}} vnđ</span>
 		    					</p>
 								</div>
 	          	</div>
@@ -156,6 +160,7 @@
 								</div>
 	          	</div>
 	          </div>
+		
           </div> <!-- .col-md-8 -->
         </div>
       </div>
