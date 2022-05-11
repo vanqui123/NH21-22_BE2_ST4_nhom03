@@ -72,13 +72,13 @@
 	          		<p style="color: #000;">600 kg available</p>
 	          	</div>
           	</div>
+			  <p  class="btn btn-black py-3 px-5"><button type="submit">Add to Cart</button></p>
 			  
-			   @if(Auth::user())
-			   <p  class="btn btn-black py-3 px-5"><button type="submit">Add to Cart</button></p>
+			   <!-- @if(Auth::user())
          
 			@else
 			<p  class="btn btn-black py-3 px-5"><button ><a href="{{route('register')}}"> Add to Cart</a></button></p>
-			@endif 
+			@endif  -->
     			</div>
     		</div>
 			</form>

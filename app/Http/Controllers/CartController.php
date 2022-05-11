@@ -44,9 +44,7 @@ class CartController extends Controller
     public function increaseQuantity(Request $request){
         $id = $request->id;
         $product = Cart::where('id',$id)->get();
-        $product1=$product;
-        // dd($product1);
-     $qty = $product1->quanity;
+     $qty = $product->quanity;
         Cart::update($id, $qty);
         return redirect()->route('cart.list');
     }
