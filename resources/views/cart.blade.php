@@ -49,7 +49,7 @@
 								  <input type="hidden" value="{{$cart->id}}" name="id"/>
 								  </form>
                            </td>        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/{{ $cart->image}});"></div></td>
+						        <td class="image-prod"><div class="img" style="background-image:url(images/{{$cart->image}});"></div></td>
 						        
 						        <td class="product-name">
 						        	<h3>{{$cart->product_name}}</h3>
