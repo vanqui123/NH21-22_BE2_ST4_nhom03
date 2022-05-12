@@ -35,9 +35,11 @@
 							 	$total = 0; 
 							  @endphp
 								@foreach ($carts as $cart)
-							@php	$sum += $cart->price;
+							@php	
+							
 								
 								$total =$cart->price * $cart->quanity;
+								$sum += $total;
 							@endphp
 					
 							<tr class="text-center">
@@ -62,7 +64,7 @@
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-							<form action="{{route('cart.update')}}" method="get">
+							<form action="{{route('cart.decrease')}}" method="get">
 								@csrf
 									<span class="input-group-btn mr-2">
 										<input type="hidden" value="{{$cart->id}}" name="id"/>
@@ -72,12 +74,15 @@
 										</span>
 										</form>
 					             	<input type="text" name="quantity" class="quantity form-control input-number" value="{{$cart->quanity}}" min="1" max="100">
-									
+									 <form action="{{route('cart.increase')}}" method="get">
+								@csrf
 									 <span class="input-group-btn ml-2">
-									<button  type="button" class="quantity-right-plus btn btn_right" data-type="plus" data-field="">
+									 <input type="hidden" value="{{$cart->id}}" name="id"/>
+									<button  type="submit" class="quantity-right-plus btn btn_right" data-type="plus" data-field="">
 									<i class="ion-ios-add"></i>
 								</button>
 	           			  	</span>
+								 </form>
 					          	</div>
 					          </td>
 						        

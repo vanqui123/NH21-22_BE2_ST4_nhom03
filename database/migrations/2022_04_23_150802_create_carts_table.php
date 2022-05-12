@@ -21,7 +21,7 @@ class CreateCartsTable extends Migration
                 $table->string('product_name');
                 $table->string('image');
                 $table->double('price');
-                $table->string('quanity');
+                $table->integer('quanity');
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on
                 update CURRENT_TIMESTAMP'));

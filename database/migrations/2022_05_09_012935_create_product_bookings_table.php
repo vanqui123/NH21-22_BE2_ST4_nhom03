@@ -18,7 +18,7 @@ class CreateProductBookingsTable extends Migration
             $table->bigInteger('product_id')->unsigned();
                 $table->foreign('product_id')->references('product_id')->on('product')->
                 onUpdate('cascade')->onDelete('cascade');
-                $table->string('quanity');
+                $table->integer('quanity');
                 $table->double('price');
                 $table->string('payment_status');
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

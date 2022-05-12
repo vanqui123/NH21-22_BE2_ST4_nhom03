@@ -98,9 +98,12 @@
 	          </form><!-- END -->
 					</div>
 					<div class="col-xl-5">
-					@php $sum  =0;@endphp
-				@foreach ($data as $value)
-				@php	$sum += $value->price @endphp
+					@php $sum  =0; @endphp
+				@foreach   ($data as $value)
+				@php
+				$total =$value->price * $value->quanity;
+								$sum += $total;
+				 @endphp
 				@endforeach
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">

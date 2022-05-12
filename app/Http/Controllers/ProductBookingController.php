@@ -61,7 +61,6 @@ class ProductBookingController extends Controller
     public function show()
     {
         $product_bookings = ProductBooking::All();
-
         return view('checkout',['data'=>$product_bookings]);
     }
 
