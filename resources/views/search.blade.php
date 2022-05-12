@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('../images/bg_1.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
@@ -21,11 +21,13 @@
             </div>
         </div>
         <div class="row">
-            @isset($product)
-            @foreach ($product as $product)
+            @isset($products)
+            @foreach ($products as $product)
+            @php $photo = explode(',',$product->photo); @endphp
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href="#" class="img-prod"><img class="img-fluid" src="images/{{$product->image}}" alt="Colorlib Template">
+                    <a href="#" class="img-prod">
+                        <img class="img-fluid" src="../images/{{$product->image}}" alt="Colorlib Template">
                         <span class="status">30%</span>
                         <div class="overlay"></div>
                     </a>
@@ -55,8 +57,9 @@
             @endforeach
             @endisset
         </div>
-       
-     
+        <div class="col-md-12">
+                {{ $products->links() }}
+            </div>     
     </div>
 </section>
 
