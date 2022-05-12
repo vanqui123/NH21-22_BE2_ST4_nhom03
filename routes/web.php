@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProtypeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductBookingController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -21,6 +22,9 @@ use App\Http\Controllers\ProductBookingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -47,6 +51,7 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 Route::get('cart/updateDe', [CartController::class, 'decreaseQuantity'])->name('cart.decrease');
 Route::get('cart/updateIn', [CartController::class, 'increaseQuantity'])->name('cart.increase');
 
+Route::get('/admin',[AdminController::class,'index']);
 
 //Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
