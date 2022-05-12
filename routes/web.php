@@ -60,7 +60,7 @@ Route::get('/{name?}',[MainController::class,'navigation']);
 
 
 //Search func
-Route::post('/search', [SearchController::class, 'search']);
+Route::get('/search/key', [SearchController::class, 'search'])->name('search');
 
 //Lấy ds blog
 
