@@ -11,6 +11,10 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductBookingController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogAdminController;
+use App\Http\Controllers\ContactAdminController;
+use App\Http\Controllers\BookingAdminController;
+
+
 
 
 
@@ -76,6 +80,17 @@ Route::get('/search/key', [SearchController::class, 'search'])->name('search');
 
 
 //Blog admin
-Route::get('admin/blogadmin',[BlogAdminController::class,'show']);
+Route::get('admin/blogadmin',[BlogAdminController::class,'show'])->name('show.blog');
 Route::get('admin/addblog',[BlogAdminController::class,'add']);
-Route::post('blogadmin', [BlogAdminController::class, 'addblog'])->name('addblog.add');
+Route::post('admin/blogadmin', [BlogAdminController::class, 'addblog'])->name('addblog.add');
+Route::get('admin/addblog/delete',[BlogAdminController::class,'deleteBlog'])->name('blog.delete');
+Route::get('admin/editblog',[BlogAdminController::class,'edit'])->name('blog.edit');
+Route::post('admin/editblog/edit',[BlogAdminController::class,'editblog'])->name('blogedit.edit');
+//Contact Admin 
+Route::get('admin/contactadmin',[ContactAdminController::class,'show'])->name('show.contact');
+
+//Cart Admin
+Route::get('admin/cartadmin',[BookingAdminController::class,'show'])->name('show.booking');
+
+
+

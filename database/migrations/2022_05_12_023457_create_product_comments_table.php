@@ -13,17 +13,17 @@ class CreateProductCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_comments', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->text('comment');
-            $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->text('replied_comment')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
-            $table->timestamps();
-        });
+        // Schema::create('product_comments', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->unsignedBigInteger('user_id')->nullable();
+        //     $table->unsignedBigInteger('product_id')->nullable();
+        //     $table->text('comment');
+        //     $table->enum('status', ['active', 'inactive'])->default('active');
+        //     $table->text('replied_comment')->nullable();
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+        //     $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
+        //     $table->timestamps();
+        // });
     }
 
     /**

@@ -75,6 +75,9 @@
                     </div>
                 </nav>
             </div>
+            @if(session('status'))
+            <h6 class="alert alert-success" style="position: absolute;left: 500px;top: 50px;z-index: 1;">{{ session('status') }}</h6>
+            @endif
             <table class="table table-striped " style="margin-top: 55px;margin-left: 215px;">
               <thead>
                   <tr>
@@ -82,7 +85,7 @@
                           ID
                       </th>
                       <th style="width: 20%;text-align: center;">
-                          Name
+                          Title
                       </th>
                       <th style="width: 20%;text-align: center;">
                           Slug
@@ -96,10 +99,12 @@
               </thead>
               <tbody>
              @foreach($data as $value)
+           
                   <tr>
                     
                       <td class="text-center">
                             {{$value->id}}
+                          
                       </td>
                       <td class="text-center">
                       {{$value->title}}
@@ -110,18 +115,24 @@
                       <td > <img style="width: 40%;" src="../images/{{$value->image}}" alt="">
                       </td>
                       <td class="project-actions text-right" >
-                          <a class="btn btn-info btn-sm" href="">
+                      </a>
+                          <form action="{{route('blog.edit')}}" method="get" enctype="multipart/form">
+									@csrf
                               <i class="fas fa-pencil-alt">
                               </i>
-                              Edit  
-                          </a>
-                          <a class="btn btn-danger btn-sm" href=" ">
+                              <button type="submit" class="btn btn-info btn-sm"> Edit</button>   
+                              <input type="hidden" name="id" value="{{$value->id}}" />   
+                              </form>
+                          <form action="{{route('blog.delete')}}" method="get" enctype="multipart/form">
+									@csrf
                               <i class="fas fa-trash">
                               </i>
-                              Delete
-                          </a>
+                             <button type="submit" class="btn btn-danger btn-sm"> Delete</button>
+                              <input type="hidden" name="id" value="{{$value->id}}" />
+                              </form>
                       </td>
                   </tr>
+                 
             @endforeach;
 
               </tbody>

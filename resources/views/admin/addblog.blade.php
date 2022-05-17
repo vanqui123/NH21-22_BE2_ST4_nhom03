@@ -75,7 +75,10 @@
                     </div>
                 </nav>
             </div>
-            <form action="{{route('addblog.add')}}" method="post" enctype="multipart/form-data" style="margin-left: 240px;width: 100%;">
+            @if(session('status'))
+            <h6 class="alert alert-success" style="position: absolute;left: 500px;top: 50px;z-index: 1;">{{ session('status') }}</h6>
+            @endif
+            <form action="{{ route('addblog.add') }}" method="post" enctype="multipart/form-data" style="margin-left: 240px;width: 100%;">
  @csrf
             <section class="content">
     <div class="row">
@@ -91,11 +94,6 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="form-group">
-              <label for="inputName">Name</label>
-              <input type="text" id="inputName" class="form-control" name="name">
-            </div>
-           
             <div class="form-group">
               <label for="inputClientCompany">Title</label>
               <input type="text" id="inputPrice" class="form-control" name="title">

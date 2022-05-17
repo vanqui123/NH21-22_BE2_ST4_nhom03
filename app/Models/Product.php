@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 { 
     protected $table = 'product';
+    protected $primaryKey = 'product_id';
     public function protype(){
         return $this->belongsTo(Protype::class,"type_id");
     }
+  
 }
 
