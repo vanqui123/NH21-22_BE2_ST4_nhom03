@@ -48,7 +48,7 @@
 						<h3><a href="#">{{$value->name}}</a></h3>
 						<div class="d-flex">
 							<div class="pricing">
-								<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$value->price}}</span></p>
+								<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($value->price)}} VND</span></p>
 							</div>
 						</div>
 						<div class="bottom-area d-flex px-3">

@@ -95,7 +95,7 @@
 									<div class="text text-center">
 										<h2>Vegetables</h2>
 										<p>Protect the health of every home</p>
-										<p><a href="#" class="btn btn-primary">Shop now</a></p>
+										<p><a href="{{route('shop')}}" class="btn btn-primary">Shop now</a></p>
 									</div>
 								</div>
 							</div>
@@ -154,7 +154,7 @@
     						<h3><a href="#">{{$value->name}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$value->price}}</span></p>
+		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($value->price)}} VND</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">

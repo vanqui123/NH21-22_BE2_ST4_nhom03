@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-
+    
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
@@ -20,6 +20,16 @@
                 </ul>
             </div>
         </div>
+        <form action="{{route('search')}}" method="get">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-8">
+					<input type="search" name="keywords" class="form-control" placeholder="Tìm kiếm...">
+				</div>
+				<div class="col-md-2">
+					<button type="submit" class="btn btn-primary btn-block">Tìm Kiếm</button>
+				</div>
+			</div>
+		</form>
         <div class="row">
             @isset($products)
             @foreach ($products as $product)
@@ -35,7 +45,7 @@
                         <h3><a href="#">{{$product->name}}</a></h3>
                         <div class="d-flex">
                             <div class="pricing">
-                                <p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$product->price}}</span></p>
+                                <p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($product->price)}} VND</span></p>
                             </div>
                         </div>
                         <div class="bottom-area d-flex px-3">
