@@ -12,6 +12,8 @@
     </div>
 
     <section class="ftco-section">
+		<form action="{{route('user_order.add')}}" method="post">
+			@csrf
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-7 ftco-animate">
@@ -21,12 +23,10 @@
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Full Name</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input name="fullname" type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
-	            
                 <div class="w-100"></div>
-		          
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
@@ -60,6 +60,8 @@
 				$total =$value->price * $value->quanity;
 								$sum += $total;
 				 @endphp
+			
+			
 				@endforeach
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
@@ -90,32 +92,32 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
+											   <label><input type="radio" name="payment_status" value="Direct" class="mr-2"> Direct Bank Tranfer</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Check Payment</label>
+											   <label><input type="radio" name="payment_status" value="Payment" class="mr-2"> Check Payment</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2"> Paypal</label>
+											   <label><input type="radio" name="payment_status" value="Paypal" class="mr-2"> Paypal</label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2"> I have read and accept the terms and conditions</label>
+											   <label><input type="checkbox" name="payment_status" value="" class="mr-2"> I have read and accept the terms and conditions</label>
 											</div>
 										</div>
 									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
+									<p><button type="submit" class="btn btn-primary py-3 px-4">Place an order</button></p>
 								</div>
 	          	</div>
 	          </div>
@@ -123,6 +125,7 @@
           </div> <!-- .col-md-8 -->
         </div>
       </div>
+	  </form>
     </section> <!-- .section -->
 
 		<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
@@ -178,7 +181,6 @@
 		            $('#quantity').val(quantity - 1);
 		            }
 		    });
-		    
 		});
 	</script>
     

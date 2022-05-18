@@ -15,6 +15,7 @@ class CreateProductBookingsTable extends Migration
     {
         Schema::create('product_bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('useroder_id');
             $table->bigInteger('product_id')->unsigned();
                 $table->foreign('product_id')->references('product_id')->on('product')->
                 onUpdate('cascade')->onDelete('cascade');

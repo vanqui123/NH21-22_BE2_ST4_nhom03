@@ -13,6 +13,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogAdminController;
 use App\Http\Controllers\ContactAdminController;
 use App\Http\Controllers\BookingAdminController;
+use App\Http\Controllers\UserOrderAdminController;
+
+
 
 
 
@@ -70,7 +73,8 @@ Route::get('product/booking', [ProductBookingController::class, 'store'])->name(
 Route::get('checkout', [ProductBookingController::class, 'show']);
 
 Route::get('/{name?}',[MainController::class,'navigation']);
-
+ //User order
+Route::post('checkout', [UserOrderAdminController::class, 'addUserOrder'])->name('user_order.add');
 
 //Search func
 Route::get('/search/key', [SearchController::class, 'search'])->name('search');
@@ -90,7 +94,8 @@ Route::post('admin/editblog/edit',[BlogAdminController::class,'editblog'])->name
 Route::get('admin/contactadmin',[ContactAdminController::class,'show'])->name('show.contact');
 
 //Cart Admin
-Route::get('admin/cartadmin',[BookingAdminController::class,'show'])->name('show.booking');
+//Cần có USER ID DỂ ĐẦY ĐỦ RÕ RÀNG HƠN
+Route::get('admin/cartadmin',[UserOrderAdminController::class,'show'])->name('show.booking');
 
 
 

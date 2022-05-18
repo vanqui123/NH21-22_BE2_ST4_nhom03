@@ -83,16 +83,18 @@
                           STT
                       </th>
                       <th style="width: 20%;text-align: center;">
-                         Proudct Name
+                         Full Name
                       </th>
+                     
                       <th style="width: 20%;text-align: center;">
-                      Quanity
+                        Address
                             </th>
                             <th style="width: 20%;text-align: center;">
-                     Total
+                            Phone
                             </th>
+                         
                             <th style="width: 20%;text-align: center;">
-                     Payment Status
+                        Payment Status
                             </th>
                   </tr>
               </thead>
@@ -101,21 +103,50 @@
                   <tr>
                       <td>{{$key + 1}}</td>
                       <td class="text-center">
-                            {{$value->product->name}}
+                            {{$value->fullname}}
+                      </td>
+                    
+                      <td class="text-center">
+                            {{$value->address}}
                       </td>
                       <td class="text-center">
-                      {{$value->quanity}}
+                            {{$value->phone}}
                       </td>
-                      <td class="text-center">
-                      {{$value->quanity * $value->price}}
-                      </td>
+                     
                       <td class="text-center">
                       {{$value->payment_status}}
                       </td>  
                   </tr>
                  
-            @endforeach;
-
+            @endforeach
+            <th style="width: 20%;text-align: center;">
+                         Proudct Name
+                      </th>
+                      <th style="width: 20%;text-align: center;">
+                        Quanity
+                            </th>
+                      <th style="width: 20%;text-align: center;">
+                        Total
+                            </th>
+                            <th style="width: 20%;text-align: center;">
+                        Price
+                            </th>
+        @foreach($productBooking as $productBooking )
+            <tr>
+            <td class="text-center">
+                            {{$productBooking->product->name}}
+                      </td>
+                      <td class="text-center">
+                      {{$productBooking->quanity}}
+                      </td>
+                      <td class="text-center">
+                      {{$productBooking->quanity * $productBooking->price}}
+                      </td>
+                      <td class="text-center">
+                      {{$productBooking->price}}
+                      </td>
+                      </tr>
+            @endforeach
               </tbody>
           </table>
         

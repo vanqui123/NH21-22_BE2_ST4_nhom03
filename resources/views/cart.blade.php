@@ -59,6 +59,8 @@
 							
 								<td><input type="checkbox" name="select_product[]" cart-id="{{$cart->id}}"></td>
 						        <input type="hidden" id="token" value="{{ csrf_token() }}">
+						        <input type="hidden" name="useroder_id" value="1">
+
 								<td class="price">{{$cart->price}}</td>
 						       
 						        

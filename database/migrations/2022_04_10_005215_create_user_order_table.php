@@ -14,12 +14,15 @@ class CreateUserOrderTable extends Migration
     public function up()
     {
         Schema::create('user_order', function (Blueprint $table) {
-            $table->Integer('product_id');
-            $table->Integer('user_id');
-            $table->string('product_name');
-            $table->double('price');
-            $table->Integer('double');
-            $table->Integer('voucher_id');
+            $table->increments('useroder_id');
+            $table->string('fullname');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('payment_status');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on
+            update CURRENT_TIMESTAMP'));
         });
     }
 

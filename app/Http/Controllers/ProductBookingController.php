@@ -45,6 +45,7 @@ class ProductBookingController extends Controller
             $data[$i]['quanity'] = $cart->quanity;
             $data[$i]['payment_status'] = '0';
         }
+    
         $ProductBooking = ProductBooking::insert($data);
         if($ProductBooking){
             Cart::destroy($cart_id);
