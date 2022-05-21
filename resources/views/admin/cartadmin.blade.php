@@ -83,6 +83,9 @@
                           STT
                       </th>
                       <th style="width: 20%;text-align: center;">
+                         User Name
+                      </th>
+                      <th style="width: 20%;text-align: center;">
                          Full Name
                       </th>
                      
@@ -96,12 +99,19 @@
                             <th style="width: 20%;text-align: center;">
                         Payment Status
                             </th>
+                            <th style="width: 20%;text-align: center;">
+                      Order
+                            </th>
                   </tr>
               </thead>
               <tbody>
              @foreach($data as $key=>$value)
                   <tr>
                       <td>{{$key + 1}}</td>
+                      <td class="text-center">
+                            {{$value->users->name}}
+                      </td>
+                    
                       <td class="text-center">
                             {{$value->fullname}}
                       </td>
@@ -116,37 +126,52 @@
                       <td class="text-center">
                       {{$value->payment_status}}
                       </td>  
-                  </tr>
-                 
-            @endforeach
-            <th style="width: 20%;text-align: center;">
+                      @endforeach
+                      <td class="text-center">
+                      <table class="table table-striped " style="margin-top: 0px;margin-right: 100px;">
+                      <th style="width: 20%;text-align: center;">
+                         User Name
+                      </th>
+                      <th style="width: 20%;text-align: center;">
                          Proudct Name
                       </th>
                       <th style="width: 20%;text-align: center;">
                         Quanity
                             </th>
                       <th style="width: 20%;text-align: center;">
-                        Total
+                     
+                        Price
                             </th>
                             <th style="width: 20%;text-align: center;">
-                        Price
+                     
+                            Total
                             </th>
         @foreach($productBooking as $productBooking )
             <tr>
+            <td class="text-center">
+                            {{$productBooking->users->name}}
+                      </td>
             <td class="text-center">
                             {{$productBooking->product->name}}
                       </td>
                       <td class="text-center">
                       {{$productBooking->quanity}}
+                      </td>  
+                      <td class="text-center">
+                      {{$productBooking->price}}
                       </td>
                       <td class="text-center">
                       {{$productBooking->quanity * $productBooking->price}}
                       </td>
-                      <td class="text-center">
-                      {{$productBooking->price}}
-                      </td>
+                    
                       </tr>
             @endforeach
+</table>
+                      </td>  
+                  </tr>
+                 
+   
+          
               </tbody>
           </table>
         

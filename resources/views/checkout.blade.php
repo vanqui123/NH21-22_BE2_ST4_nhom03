@@ -61,7 +61,7 @@
 								$sum += $total;
 				 @endphp
 			
-			
+				<input text="hidden"  value="{{$value->user_id}} " name="user_id"/>
 				@endforeach
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">

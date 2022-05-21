@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-
+use Auth;
 class CartController extends Controller
 {
     /**
@@ -30,6 +30,7 @@ class CartController extends Controller
     {
         $data = array(
             'product_id' =>$request->product_id,
+            'user_id' =>Auth::user()->id,
             'product_name' =>$request->name,
             'price' =>$request->price,
             'quanity' =>$request->quantity,
