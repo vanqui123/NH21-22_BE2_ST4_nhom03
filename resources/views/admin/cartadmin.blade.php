@@ -95,7 +95,9 @@
                             <th style="width: 20%;text-align: center;">
                             Phone
                             </th>
-                         
+                            <th style="width: 20%;text-align: center;">
+                           Voucher_price
+                            </th>
                             <th style="width: 20%;text-align: center;">
                         Payment Status
                             </th>
@@ -105,24 +107,27 @@
                   </tr>
               </thead>
               <tbody>
+                  @php $voucher_price = 0 @endphp
              @foreach($data as $key=>$value)
+             @php   $voucher_price = $value->voucher->voucher_price  @endphp
                   <tr>
                       <td>{{$key + 1}}</td>
                       <td class="text-center">
                             {{$value->users->name}}
                       </td>
-                    
                       <td class="text-center">
                             {{$value->fullname}}
                       </td>
-                    
                       <td class="text-center">
                             {{$value->address}}
                       </td>
-                      <td class="text-center">
-                            {{$value->phone}}
-                      </td>
-                     
+                 
+                <td class="text-center">
+                      {{$value->phone}}  
+                </td>
+                <td class="text-center">
+                      {{number_format($voucher_price)}}  
+                </td>
                       <td class="text-center">
                       {{$value->payment_status}}
                       </td>  
@@ -146,7 +151,9 @@
                      
                             Total
                             </th>
+        @php $total = 0 @endphp
         @foreach($productBooking as $productBooking )
+        @php $total += $productBooking->quanity * $productBooking->price @endphp
             <tr>
             <td class="text-center">
                             {{$productBooking->users->name}}
@@ -158,15 +165,17 @@
                       {{$productBooking->quanity}}
                       </td>  
                       <td class="text-center">
-                      {{$productBooking->price}}
+                      {{number_format($productBooking->price)}} vnđ
                       </td>
                       <td class="text-center">
-                      {{$productBooking->quanity * $productBooking->price}}
+                      {{number_format($productBooking->quanity * $productBooking->price)  }} vnđ
                       </td>
-                    
+         
                       </tr>
             @endforeach
+           
 </table>
+<p>{{number_format($total - $voucher_price) }} vnđ</p>
                       </td>  
                   </tr>
                  

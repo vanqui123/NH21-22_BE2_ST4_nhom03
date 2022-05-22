@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+
 use Auth;
+
 class CartController extends Controller
 {
     /**
@@ -19,11 +21,10 @@ class CartController extends Controller
     }
     public function cartList()
     {
-        $carts = Cart::all();
+        $carts = Cart::all();    
         return view('cart',['carts'=>$carts]);
-        // dd($cartItems);
-       
-    }
+            }
+   
 
 
     public function addToCart(Request $request)
@@ -38,9 +39,7 @@ class CartController extends Controller
             
         );
         Cart::create($data);
-        session()->flash('success', 'Product is Added to Cart Successfully !');
-
-        return redirect()->route('cart.list');
+        return redirect()->route('cart.list')->with('success', 'Product is Added to Cart Successfully !');
     }
     public function increaseQuantity(Request $request){
         $id = $request->id;

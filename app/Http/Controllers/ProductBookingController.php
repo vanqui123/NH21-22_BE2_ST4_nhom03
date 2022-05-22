@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ProductBooking;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use App\Models\Voucher;
+use Alert;
 
 class ProductBookingController extends Controller
 {
@@ -45,8 +47,9 @@ class ProductBookingController extends Controller
             $data[$i]['price'] = $cart->price;
             $data[$i]['quanity'] = $cart->quanity;
             $data[$i]['payment_status'] = '0';
+         
         }
-    
+       
         $ProductBooking = ProductBooking::insert($data);
         if($ProductBooking){
             Cart::destroy($cart_id);
@@ -60,10 +63,20 @@ class ProductBookingController extends Controller
      * @param  \App\Models\ProductBooking  $productBooking
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
         $product_bookings = ProductBooking::All();
-        return view('checkout',['data'=>$product_bookings]);
+        $voucher_name = $request->voucher_name;
+        $voucher = Voucher::where('voucher_name',$voucher_name)->first(); 
+   
+        if($voucher_name == $voucher['voucher_name']  ){
+            Alert::success('Success', 'Voucher Success');
+                }
+                else if($voucher_name != $voucher['voucher_name']) {
+                    Alert::error('Error', 'Voucher Error');
+                }
+                
+        return view('checkout',['data'=>$product_bookings,'voucher'=>$voucher]);
     }
 
     /**

@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+@include('sweetalert::alert')
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -26,32 +27,50 @@
 	                  <input name="fullname" type="text" class="form-control" placeholder="">
 	                </div>
 	              </div>
-                <div class="w-100"></div>
-		            <div class="w-100"></div>
+               
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress"> Address</label>
 	                  <input type="text" name="address" class="form-control" placeholder="House number and street name">
 	                </div>
 		            </div>
-		            <div class="w-100"></div>
-		            <div class="w-100"></div>
+
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
 	                  <input type="text" name="phone" class="form-control" placeholder="">
 	                </div>
+				
+				
 	              </div>
-	              <div class="col-md-6">
-	                <div class="form-group">
+				  
+				  <div class="col-md-6">
+				  <div class="form-group">
 	                	<label for="emailaddress">Email Address</label>
 	                  <input type="text" name="email" class="form-control" placeholder="">
 	                </div>
-                </div>
-                <div class="w-100"></div>
-             
-	            </div>
-	          </form><!-- END -->
+					</div>
+	             
+	           
+	          </form>
+			  <div class="col-lg-6 mt-5 cart-wrap ftco-animate">
+    				<div class="cart-total mb-3">
+    					<h3>Coupon Code</h3>
+    					<p>Enter your coupon code if you have one</p>
+  						<form action="{{route('voucher.adduser')}}" method="post" enctype="multipart/form"  class="info">
+	              		@csrf
+						  <div class="form-group">
+	              	<label for="">Coupon code</label>
+	                <input type="text" class="form-control text-left px-3" name="voucher_name" placeholder="">
+	              </div>
+	     
+    				</div>
+    				<p><button type="submit" class="btn btn-primary py-3 px-4">Apply Coupon</button></p>
+					</form>
+    			</div>
+        
+                </div> 
+			  <!-- END -->
 					</div>
 					<div class="col-xl-5">
 					@php $sum  =0; @endphp
@@ -61,7 +80,7 @@
 								$sum += $total;
 				 @endphp
 			
-				<input text="hidden"  value="{{$value->user_id}} " name="user_id"/>
+				<input type="hidden"  value="{{$value->user_id}} " name="user_id">
 				@endforeach
 	          <div class="row mt-5 pt-3">
 	          	<div class="col-md-12 d-flex mb-5">
@@ -77,12 +96,19 @@
 		    					</p>
 		    					<p class="d-flex">
 		    						<span>Discount</span>
-		    						<span>$3.00</span>
+		    						<span>{{number_format($voucher['voucher_price'])}}</span>
 		    					</p>
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>Total</span>
-		    						<span>{{$sum}} vnđ</span>
+		    						<span>	@if($sum - $voucher['voucher_price'] >= 0)
+								{{
+									number_format($sum -  $voucher['voucher_price'])							
+								}}
+								@else
+							
+								{{number_format($sum)}}
+								@endif vnđ</span>
 		    					</p>
 								</div>
 	          	</div>
@@ -117,13 +143,14 @@
 											</div>
 										</div>
 									</div>
+									<label><input type="hidden" name="voucher_id" value="{{ $voucher['id']}}" class="mr-2"> Direct Bank Tranfer</label>
 									<p><button type="submit" class="btn btn-primary py-3 px-4">Place an order</button></p>
 								</div>
 	          	</div>
 	          </div>
 		
           </div> <!-- .col-md-8 -->
-        </div>
+		
       </div>
 	  </form>
     </section> <!-- .section -->

@@ -15,6 +15,9 @@ use App\Http\Controllers\ContactAdminController;
 use App\Http\Controllers\BookingAdminController;
 use App\Http\Controllers\UserOrderAdminController;
 use App\Http\Controllers\VoucherAdminController;
+use App\Http\Controllers\VoucherUser;
+
+
 
 
 
@@ -98,6 +101,8 @@ Route::get('admin/addvoucher',[VoucherAdminController::class,'add']);
 Route::post('admin/voucheradmin', [VoucherAdminController::class, 'addVoucher'])->name('voucher.add');
 Route::get('admin/editvoucher',[VoucherAdminController::class,'edit'])->name('voucher.edit');
 Route::post('admin/editvoucher/edit',[VoucherAdminController::class,'editVoucher'])->name('voucheredit.edit');
+//Voucher User
+Route::post('/cart/voucher', [ProductBookingController::class, 'show'])->name('voucher.adduser');
 
 
 

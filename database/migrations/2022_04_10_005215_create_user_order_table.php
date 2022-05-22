@@ -22,6 +22,7 @@ class CreateUserOrderTable extends Migration
             $table->string('address');
             $table->string('phone');
             $table->string('email');
+            $table->Integer('voucher_id');
             $table->string('payment_status');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on

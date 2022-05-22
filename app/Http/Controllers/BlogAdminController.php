@@ -18,7 +18,8 @@ class BlogAdminController extends Controller
     }
     public function edit(Request $request){
         $id = $request->id;
-        $blog = Category::find($id)->get();
+        $blog = Category::find($id)->limit(1)->get();
+     
         return view('admin/editblog',['blog'=>$blog]);
     }
     public function addBlog(Request $request){

@@ -110,8 +110,6 @@
               <input type="file" name="image" id="fileToUpload" class="form-control" >
             </div>
          
-          
-          
           </div>
           @endforeach
           <!-- /.card-body -->

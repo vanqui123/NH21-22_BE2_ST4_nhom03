@@ -13,4 +13,8 @@ class UserOder extends Model
         
         return $this->belongsTo(User::class,'user_id');
     }
+    public function voucher(){
+        
+        return $this->belongsTo(Voucher::class,'voucher_id');
+    }
 }
