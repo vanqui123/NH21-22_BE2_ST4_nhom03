@@ -63,7 +63,7 @@
 			<div class="input-group col-md-6 d-flex mb-3" style="width: 300px;" >
 						<input type="hidden"  value="{{$product_detail['product_id']}}" name="product_id">
 	             	<input type="hidden"  value="{{$product_detail['name']}}" name="name">
-	             	<input type="hidden"  value="{{$product_detail['price']}}" name="price">
+	             	<input type="hidden"   value="{{$product_detail['price']}}" name="price">
 	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
 					 <input type="hidden"  value="{{$product_detail['image']}}" name="image">	            				
 	          	</div>
@@ -75,9 +75,9 @@
 			
 			  
 			   @if(Auth::user())
-			   <p  class="btn btn-black py-3 px-5"><button type="submit">Add to Cart</button></p>
+			   <p  class="btn btn-black py-3 px-5"><button style="cursor: pointer;" type="submit">Add to Cart</button></p>
 			@else
-			<p  class="btn btn-black py-3 px-5"><button ><a href="{{route('register')}}"> Add to Cart</a></button></p>
+			<p  class="btn btn-black py-3 px-5"><button style="cursor: pointer;" ><a href="{{route('register')}}"> Add to Cart</a></button></p>
 			@endif 
     			</div>
     		</div>
@@ -85,7 +85,91 @@
     	</div>
 	
     </section>
+	<form action="{{route('comment.store')}}" method="post">
+		@csrf
+	<div class="card">
+			   <div class="row">
+			
+				   <div class="col-12">
+					   <div class="comment-box ml-2">
+						<input type="hidden"  value="{{$product_detail['product_id']}}" name="product_id">
+						   <h5>Add a comment</h5>
+						   <div class="rating"> 
+							   <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+							   <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+							   <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+							   <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+							   <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+</div>						   
+						   <div class="comment-area">
+							   <textarea class="form-control" name="text_comment" placeholder="what is your view?" ></textarea>
+						   </div> 
+						   <div class="comment-btns mt-2">  
+							   <div class="row"> 
+								   <div class="col-6">									   
+									   <div class="">	
+									   @if(Auth::user())
+									   <button type="submit" class="btn btn-success send btn-sm">Send </button>      										   
+			@else
+			<button type="submit" class="btn btn-success send btn-sm"><a href="{{route('register')}}" style="color: white;"> Send</a></button> 
+			@endif 								   
+									   </div>								   
+								   </div>							   
+							   </div>						   
+						   </div>					   
+					   </div>
+				   
+				   </div>			   
+			   </div>	 
+		   </div>
+		   </form>
+		   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+		@foreach($comment as $comments)
+        <div class="media g-mb-30 media-comment">
+            <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+            <div class="media-body u-shadow-v18 g-bg-secondary " style="padding: 10px;">
+              <div class="g-mb-15">
+                <h5 class="h5 g-color-gray-dark-v1 mb-0">{{$comments->users->name}}</h5>
+				<p class="g-color-gray-dark-v4 g-font-size-12">
+				<div class="rating"> 
+				@if($comments->rate == 1)
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				@elseif($comments->rate == 2)
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				@elseif($comments->rate == 3)
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
 
+				@elseif($comments->rate == 4)
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+					<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				@elseif($comments->rate == 5 )
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+					<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+				<span><i class="fas fa-star" style="color: #ffbc00;"></i></span>
+
+
+				@endif
+				</div><br>
+				</p>
+              </div>
+
+              <p>{{$comments->text_comment}}</p>
+            </div>
+        </div>
+		@endforeach
+    </div>
+</div>
+</div>
     <section class="ftco-section">
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">

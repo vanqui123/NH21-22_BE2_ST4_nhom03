@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
 class Categories extends Seeder
 {
     /**
@@ -12,20 +11,14 @@ class Categories extends Seeder
      *
      * @return void
      */
-
+  
     public function run()
     {
         $categories = [
+          
             [
-                'title' => 'Organic foods is good for your health',
-                'slug' => 'abc',
-                'image' => 'hinhanh.jpg',
-                'created_at' => '2022-4-1',
-
-            ],
-            [
-                'title' => 'Chuối',
-                'slug' => 'Loại chuối được nhiều khách hàng ưa chuộng. 
+            'title'=>'Chuối',
+            'slug' =>'Loại chuối được nhiều khách hàng ưa chuộng. 
             Chuối chứa nhiều chất dinh dưỡng như kali, chất xơ, vitamin,... nên chuối có tác dụng tốt cho sức khoẻ như hỗ trợ giảm cân, hỗ trợ sức khoẻ tim mạch, cải thiện sức khoẻ của thận,...Cam kết đúng khối lượng, bao bì kín đáo, an toàn và bảo đảm hợp vệ sinh.
             Chuối là loại trái cây được nhiều người yêu thích và có rất nhiều loại chuối khác nhau như: chuối tiêu, chuối sứ, chuối tây,... Trong đó, chuối già giống Nam Mỹ là loại đang được nhiều người ưa chuộng hiện nay. Chuối già Nam Mỹ là giống chuối cấy mô, có nguồn gốc từ Nam Mỹ nên có chất lượng tốt và hương vị ngon, ngọt hơn hẳn so với các sản phẩm chuối khác.
             
@@ -42,13 +35,13 @@ class Categories extends Seeder
             Ngoài những lợi ích trên chuối còn được dùng để chế biến thành nhiều món ăn hấp dẫn khác nhau như:
              bánh chuối, chè chuối, bánh nậm nhân chuối,...
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'chuoi.jpg',
-                'created_at' => '2022-4-1',
-
+            'image' =>'chuoi.jpg',
+            'created_at' =>'2022-4-1',
+            
             ],
             [
-                'title' => 'Dưa Hấu Đỏ',
-                'slug' => 'Dưa hấu đỏ với thành phần chủ yếu là nước và các vitamin, khoáng chất cần thiết đặc biệt là ít calo và chất béo nên dưa hấu được xem là một sản phẩm thay thế cho nước uống thông thường. Giúp giải khát thanh nhiệt mà còn bổ sung nhiều chất dinh dưỡng cho cơ thể, giúp bạn tràn đầy năng lượng.
+            'title' => 'Dưa Hấu Đỏ',
+            'slug' =>'Dưa hấu đỏ với thành phần chủ yếu là nước và các vitamin, khoáng chất cần thiết đặc biệt là ít calo và chất béo nên dưa hấu được xem là một sản phẩm thay thế cho nước uống thông thường. Giúp giải khát thanh nhiệt mà còn bổ sung nhiều chất dinh dưỡng cho cơ thể, giúp bạn tràn đầy năng lượng.
             Dưa hấu đỏ là loại trái cây với vị ngọt thanh mát và rất giàu các chất dinh dưỡng cần thiết cho cơ thể. Dưa hấu chứa hàm lượng nước rất cao khoảng 91% trong thành phần và đặc biệt là gần như không có các chất như protein, chất béo. Dưa hấu chứa một lượng lớn các loại vitamin như vitamin C, B5, A,.. có tác dụng chống oxy hoá, hỗ trợ điều trị các vấn đề về đường tiêu hoá, các vấn đề về da, ngăn ngừa tiểu đường, ung thư và tăng cường chức năng của hệ miễn dịch.
             Xem thêm: Cách chọn và phân biệt các loại dưa hấu
             Các lợi ích của dưa hấu với sức khỏe
@@ -61,12 +54,12 @@ class Categories extends Seeder
             Dưa hấu là loại quả rất thích hợp để thưởng thức trong những ngày nắng nóng oi bức, chúng cung cấp hàm lượng nước và chất xơ dồi dào, giúp cơ thể xua tan cơn nóng, bù nước nhanh chóng. Tuy nhiên, ăn quá nhiều dưa hấu lại khiến cơ thể trở nên nóng trong người, khan tiếng,...
             
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'duahaudo.jpg',
-                'created_at' => '2022-4-1',
+            'image' =>'duahaudo.jpg',
+            'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Ôỉ',
-                'slug' => 'Ổi Đà Loan là giống ổi này có vị ngọt man mát, hơi xốp, giòn, thơm nhè nhẹ,
+            'title' => 'Ôỉ',
+            'slug' => 'Ổi Đà Loan là giống ổi này có vị ngọt man mát, hơi xốp, giòn, thơm nhè nhẹ,
              đặc biệt rất ít hạt cho cảm giăc ăn vô cùng thích thú. Trong ổi chứa nhiều vitamin giúp tăng cường miễn dịch, đẹp da, giảm cân,...Cam kết bán đúng khối lượng, chất lượng và an toàn, bao bì kín đáo sạch sẽ vệ sinh
             Ổi Đài Loan là một giống ổi vừa du nhập vào nước ta vài năm trở lại đây và mang nhiều ưu điểm nổi trội hơn so với những giống trái cây tươi ngon hiện có như quả to sáng bóng ăn rất giòn và ngọt đặc biệt là rất ít hạt. Giống ổi này có vị ngọt man mát, hơi xốp, giòn, thơm nhè nhẹ, ăn rất là thích thú. 
             Ổi ngon nhất là khi để lạnh, chấm muối ớt ăn giòn giòn rộp rộp đã miệng vô cùng.
@@ -76,22 +69,22 @@ class Categories extends Seeder
             Cách chọn ổi cũng vô cùng quan trọng để bạn có thể chọn những quả ngon ngọt đó nha. Ổi sau khi mua về thì bạn có thể ăn ngay hoặc làm nước ép uống cũng rất mát.
             Mua ngay trái cây Bách Hóa XANH các loại với vô số sản phẩm giá tốt, chất lượng và an toàn
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'oi.jpg',
-                'created_at' => '2022-4-1',
+            'image' =>'oi.jpg',
+            'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Cóc',
-                'slug' => 'Là loại trái cây nhiệt đới có quả giòn, ngọt dịu, pha ít vị chua nhẹ nhàng dễ chịu,
+            'title' =>'Cóc',
+            'slug' => 'Là loại trái cây nhiệt đới có quả giòn, ngọt dịu, pha ít vị chua nhẹ nhàng dễ chịu,
              ăn trực tiếp hoặc làm ước ép đều rất thơm ngon và bổ dưỡng. Cóc lớn túi 500g tại Bách Hóa XANH được đóng gói cẩn thận, hợp vệ sinh giúp giữ nguyên chất lượng và bề ngoài sản phẩm. Cam kết bán đúng khối lượng
             Cóc là loại trái cây xích đạo và phát triển tốt ở vùng khí hậu nhiệt đới. 
             Quả cóc có vị chua chua thanh thanh là món ăn vặt yêu thích của nhiều chị em phụ nữ.',
-                'image' => 'coc.jpg',
-                'created_at' => '2022-4-1',
+            'image' =>'coc.jpg',
+            'created_at' =>'2022-4-1',
 
             ],
             [
-                'title' => 'Bơ',
-                'slug' => 'Là một trong những loại bơ thuộc hàng ngon và chất lượng cao nhất. 
+            'title' =>'Bơ',
+            'slug' =>'Là một trong những loại bơ thuộc hàng ngon và chất lượng cao nhất. 
             Bơ sáp 034 cho quả to dài từ 20 đến 38cm, hạt nhỏ, thịt quả chắc có màu đẹp mắt, chứa nhiều dưỡng chất tốt cho sức khỏe. Ngoài ăn trực tiếp bơ cũng có thể dùng làm nguyên liệu chế biến ra nhiều món ăn ngon hấp dẫn
             Bơ 034 là loại trái cây cho năng suất cao, chất lượng quả vào loại ngon nhất trong những giống bơ sáp hiện nay. Vỏ quả có màu xanh bóng, láng. Quả có hình dáng thuôn dài với chiều dài từ 20- 27cm. Trọng lượng mỗi quả từ 300 đến 800g, hình dáng quả thon dài, hạt nhỏ. Quả thường có chiều dài từ 20- 38 cm. Một số vùng chăm sóc tốt quả có thể dài hơn. Vỏ quả cứng nên có thể dễ dàng bảo quản sau thu hoạch. Tỷ lệ thịt quả của bơ đạt 85%, thịt quả vàng, vị béo và không có xơ. Hạt quả nhỏ nên tỷ lệ thịt quả chiếm cao giúp hàm lượng chất béo trong quả đạt tối đa. Bơ dễ ăn, 
             có vị nhạt nhạt béo ngậy và tan trong miệng, dầm đường, đá ăn ngon vô cùng, giải nhiệt mùa hè.
@@ -108,14 +101,14 @@ class Categories extends Seeder
             Đầy đủ dưỡng chất với salad bơ cá hồi.
             Salad bơ thơm ngon, thích hợp cho người giảm cân
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'bo.jpg',
-                'created_at' => '2022-4-1',
-
-
+            'image' =>'bo.jpg',
+            'created_at' =>'2022-4-1',
+            
+           
             ],
-            [
-                'title' => 'Bưởi Năm Roi',
-                'slug' => 'Bưởi 5 roi là một trong những đặc sản nổi tiếng của Việt Nam. Loại bưởi này không chỉ ngon, ngọt mà còn mang lại cho con người nhiều công dụng tốt cho sức khoẻ như cung cấp nguồn vitamin dồi dào. Bưởi năm roi tại Bách hoá XANH thích hợp cho những ngày nắng nóng với nhiều cách chế biến khác nhau.
+            [ 
+            'title' => 'Bưởi Năm Roi',
+            'slug' =>'Bưởi 5 roi là một trong những đặc sản nổi tiếng của Việt Nam. Loại bưởi này không chỉ ngon, ngọt mà còn mang lại cho con người nhiều công dụng tốt cho sức khoẻ như cung cấp nguồn vitamin dồi dào. Bưởi năm roi tại Bách hoá XANH thích hợp cho những ngày nắng nóng với nhiều cách chế biến khác nhau.
             Khác với bưởi da xanh, bưởi Năm Roi khoác lên mình vỏ ngoài hình trái lê có màu xanh ngả vàng khi chín rất đẹp mắt, đây là giống trái cây nổi tiếng được trồng nhiều ở một số tỉnh miền Tây Nam Bộ. Khi tách ra, bên trong múi có màu vàng khá bắt mắt, mang vị ngọt thanh và hơi chua nhẹ, một đặc điểm khác của loại bưởi này là tép tróc khỏi vách múi và bó chặt vào nhau. Giống bưởi Năm Roi thường không có hạt hoặc rất ít, đây chính là điểm đặc biệt khiến bưởi Năm Roi này là giống bưởi quý hiếm hơn so với các loại khác.
             
             CÔNG DỤNG CỦA BƯỞI
@@ -132,12 +125,12 @@ class Categories extends Seeder
             - Chè bưởi miền Tây
             - Mứt vỏ bưởi,...
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'buoinamroi.jpg',
-                'created_at' => '2022-4-1',
-            ],
+            'image' => 'buoinamroi.jpg',
+            'created_at' =>'2022-4-1',
+             ],
             [
-                'title' => 'Khoai Tây',
-                'slug' => 'Khoai tây trồng tại Lâm Đồng đã quá quen thuộc với mỗi chúng ta. Loại củ này được xuất hiện thường xuyên trên mâm cơm này có rất nhiều công dụng hữu ích. Nó không chỉ tốt cho sức khỏe, làm đẹp hiệu quả mà còn có rất nhiều tác dụng bổ ích khác. Khoai tây có thể chế biến thành canh, súp, hoặc chiên
+            'title' =>'Khoai Tây',
+            'slug' => 'Khoai tây trồng tại Lâm Đồng đã quá quen thuộc với mỗi chúng ta. Loại củ này được xuất hiện thường xuyên trên mâm cơm này có rất nhiều công dụng hữu ích. Nó không chỉ tốt cho sức khỏe, làm đẹp hiệu quả mà còn có rất nhiều tác dụng bổ ích khác. Khoai tây có thể chế biến thành canh, súp, hoặc chiên
             Khoai tây thuộc họ cà, là một loại củ đa năng có hàm lượng chất dinh dưỡng cao, vì vậy nhiều hộ gia đình tại Việt Nam đã lựa chọn khoai tây như một món ăn chính trong các bữa ăn hàng ngày. Sở hữu nguồn vitamin và khoáng chất phong phú, khoai tây mang lại nhiều lợi ích cho sức khỏe như kháng viêm, giảm đau, tăng cường hệ miễn dịch, kích thích tiêu hóa,...
              Khoai tây có vị bột bột, hầm lên ăn rất ngon, phù hợp cho các món ăn dặm của bé yêu.
              Cách sơ chế khoai tây
@@ -154,12 +147,12 @@ class Categories extends Seeder
         - Lạ vị với khoai tây chiên bơ.
         Ngoài việc dùng để làm món ăn, khoai tây còn có công dụng chăm sóc da, đắp mặt nạ.
         Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'khoaitay.jpg',
-                'created_at' => '2022-4-1',
+        'image' =>'khoaitay.jpg',
+        'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Ớt Chuông Đỏ',
-                'slug' => 'Ớt chuông đỏ trồng tại Lâm Đồng có kích thước to và có nhiều màu sắc khác nhau như: xanh, vàng, đỏ... Ớt chuông đỏ này không có vị cay gắt như các loại ớt thông thường khác mà có vị giòn nên thích hợp cho các món xào, ăn sống. Loại ớt này còn chứa nhiều khoáng chất và vitamin tốt cho cơ thể.
+                'title' =>'Ớt Chuông Đỏ',
+                'slug' =>'Ớt chuông đỏ trồng tại Lâm Đồng có kích thước to và có nhiều màu sắc khác nhau như: xanh, vàng, đỏ... Ớt chuông đỏ này không có vị cay gắt như các loại ớt thông thường khác mà có vị giòn nên thích hợp cho các món xào, ăn sống. Loại ớt này còn chứa nhiều khoáng chất và vitamin tốt cho cơ thể.
                 Ớt chuông là giống ớt có quả to, phần thịt dày và giòn xốp. 
                 Đặc biệt, ớt chuông là loại rau củ có sự đa dạng về màu sắc (gồm xanh, vàng, cam, đỏ và đen) cũng như hương vị và độ cay nồng khác nhau. Ớt chuông xanh có hương vị hăng khá đặc trưng, trong khi đó ớt màu đỏ và vàng thường có vị ngọt hơn. 
                 Ớt chuông đỏ được sử dụng để làm dầu thơm và tương ớt khi bạn muốn giảm bớt vị cay.
@@ -174,12 +167,12 @@ class Categories extends Seeder
             Trứng ốp la ớt chuông.
             Thêm vào các món salad
             Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.  ',
-                'image' => 'otchuongdo.jpg',
-                'created_at' => '2022-4-1',
+             'image' =>'otchuongdo.jpg',
+            'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Bông Cải Xanh',
-                'slug' => 'Bông cải xanh là một loại rau xanh quen thuộc và được rất nhiều người ưa chuộng.
+                'title' =>'Bông Cải Xanh',
+                'slug' =>'Bông cải xanh là một loại rau xanh quen thuộc và được rất nhiều người ưa chuộng.
                  Bông cải xanh được trồng tại Lâm Đồng không chỉ thơm ngon, dễ ăn mà còn mang lại rất nhiều lợi ích cho sức khoẻ. Bạn có thể tham khảo các món như bông cải xanh hấp, bông cải xanh xào hải sải, súp bông cải xanh,...
                 Lợi ích dinh dưỡng
                 Bên cạnh những tác dụng giảm viêm và chống oxy hóa, một số hợp chất trong bông cải xanh có thể giúp giảm tổn thương mãn tính của một số mô trong cơ thể. 
@@ -200,11 +193,11 @@ class Categories extends Seeder
                 Hàu xào bông cải xanh mướt
                 Thịt bò xào bông cải đầy bổ dưỡng,...
                 Tuy nhiên để chế biến súp lơ đúng chuẩn thì chúng ta nên hấp cách thủy để khoáng chất có lợi không bị hao hụt nhé.',
-                'image' => 'bongcaixanh.jpg',
-                'created_at' => '2022-4-1',
+                'image' =>'bongcaixanh.jpg',
+                'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Đậu Bắp',
+                'title' =>'Đậu Bắp',
                 'slug' => 'Đậu bắp là loại quả chứa nhiều chất xơ, giàu dinh dưỡng, nhiều vitamin,…Đậu bắp luôn rất được ưa chuộng để chế biến những món ăn hàng ngày. Những thành phần dưỡng chất trong đậu bắp rất hữu ích cho hệ tiêu hóa, tim mạch, chống ung thư, tốt cho da và mắt,...
                 Đậu bắp là một loại quả với tên gọi khác mướp tây hay bắp còi, là một trong loại thực phẩm quen thuộc được sử dụng trong các bữa ăn hằng ngày. Đậu bắp dễ ăn, chứa nhiều chất xơ, giàu dinh dưỡng, nhiều vitamin,…đều là những thành phần dưỡng chất hữu ích cho hệ tiêu hóa, tim mạch, chống ung thư, tốt cho da và mắt,... 
                 Ngoài việc trở thành món ăn trong các bữa ăn hằng ngày thì đậu bắp còn được chế biến thành nước để uống. Nước đậu bắp rất tốt cho các bà bầu, hạn chế khả năng dị tật của thai nhi tốt.Cách sơ chế đậu bắp không bị nhớt
@@ -219,12 +212,12 @@ class Categories extends Seeder
                 Ngon bổ dưỡng với đậu bắp xào thịt bò.
                 Đậu bắp xào bún khô đơn giản, thanh tịnh.
                 Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'daubap.jpg',
-                'created_at' => '2022-4-1',
+                'image' =>'daubap.jpg',
+                'created_at' =>'2022-4-1',
             ],
             [
-                'title' => 'Bạc Hà',
-                'slug' => 'Môn to, dọc mùng, ráy dọc mùng là những tên gọi khác của môn bạc hà, một loại cây rau gia vị không thể thiếu trong những bát canh chua đậm vị, thơm ngon. Vị ngọt, giòn giòn, tính mát của bạc hà giúp tạo cảm giác ngon miệng, kích thích vị giác người ăn.
+                'title' =>'Bạc Hà',
+                'slug' =>'Môn to, dọc mùng, ráy dọc mùng là những tên gọi khác của môn bạc hà, một loại cây rau gia vị không thể thiếu trong những bát canh chua đậm vị, thơm ngon. Vị ngọt, giòn giòn, tính mát của bạc hà giúp tạo cảm giác ngon miệng, kích thích vị giác người ăn.
                 Bạc hà hay còn gọi là dọc mùng, môn bạc hà. Phần bẹ lá được dùng làm rau để chế biến món ăn hay làm thuốc. Trong bữa ăn, dọc mùng giúp đỡ ngán thịt cá trong canh, các món xào. Các món ăn từ dọc mùng rất thích hợp đối với bệnh nhân béo phì, tăng huyết áp, đái tháo đường, gút...
                 
                 Cách sơ chế bạc hà
@@ -243,8 +236,8 @@ class Categories extends Seeder
                 - Canh chua dọc mùng.
                 - Nộm bạc hà bóp lá chanh.
                 Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng.',
-                'image' => 'bacha.jpg',
-                'created_at' => '2022-4-1',
+                'image' =>'bacha.jpg',
+                'created_at' =>'2022-4-1',
             ],
             [
                 'title' => 'Cần Tây',
@@ -264,19 +257,19 @@ class Categories extends Seeder
                 
                 Lưu ý: Sản phẩm nhận được có thể khác với hình ảnh về màu sắc và số lượng nhưng vẫn đảm bảo về mặt khối lượng và chất lượng',
                 'image' => 'cantay.jpg',
-                'created_at' => '2022-4-1',
+                'created_at' =>'2022-4-1',
             ]
         ];
-
-        foreach ($categories as $value) {
-            DB::table('categories')->insert(
-                [
-                    'title' => $value['title'],
-                    'slug' => $value['slug'],
-                    'image' => $value['image'],
-                    'created_at' => $value['created_at'],
-                ],
+    
+        foreach($categories as $value){
+            DB::table('categories')->insert([
+                'title'=>$value['title'],
+                'slug'=>$value['slug'],
+                'image'=>$value['image'],
+                'created_at'=>$value['created_at'],
+            ],
             );
         }
     }
 }
+    

@@ -13,6 +13,7 @@ class UserOrderAdminController extends Controller
 {
     public function addUserOrder(Request $request){
         $voucher_id =$request->voucher_id;
+        
         $data = array(
             'fullname' =>$request->fullname,
             'user_id' =>$request->user_id,

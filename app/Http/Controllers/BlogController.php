@@ -14,9 +14,9 @@ class BlogController extends Controller
 
         return view('blog',['data'=>$cate]);
     }
-    function get_detailBlog($blog_id){
-        $blog = Category::where('id',$blog_id)->first(); 
-        echo $blog;
+    function getBlogSingle(Request $request){
+        $id = $request->id;
+     $blog = Category::where('id', $id)->first(); 
         return view('blog-single',['blog_detail'=>$blog]);
     }
 }

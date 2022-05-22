@@ -21,12 +21,10 @@ class CartController extends Controller
     }
     public function cartList()
     {
-        $carts = Cart::all();    
+        $user_id = Auth::user()->id;
+        $carts = Cart::where('user_id',$user_id)->get();    
         return view('cart',['carts'=>$carts]);
             }
-   
-
-
     public function addToCart(Request $request)
     {
         $data = array(
