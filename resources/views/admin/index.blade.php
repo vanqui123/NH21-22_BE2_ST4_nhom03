@@ -67,6 +67,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Cart
                             </a>
+                            <a class="nav-link" href="{{route('show.voucher')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Voucher
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

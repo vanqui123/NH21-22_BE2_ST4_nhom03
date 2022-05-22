@@ -59,7 +59,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Blog
                             </a>
-                            <a class="nav-link" href="{{url('admin/contactadmin')}}">
+                            <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Contact
                             </a>
@@ -75,107 +75,71 @@
                     </div>
                 </nav>
             </div>
-        
+            @if(session('status'))
+            <h6 class="alert alert-success" style="position: absolute;left: 500px;top: 50px;z-index: 1;">{{ session('status') }}</h6>
+            @endif
             <table class="table table-striped " style="margin-top: 55px;margin-left: 215px;">
               <thead>
                   <tr>
                       <th style="width: 0%;text-align: center;">
-                          STT
+                          ID
                       </th>
                       <th style="width: 20%;text-align: center;">
-                         User Name
+                          Voucher_name
                       </th>
                       <th style="width: 20%;text-align: center;">
-                         Full Name
+                         Voucher_price
+                  
+                      <th style="width: 10%;text-align: center;">
+                          Action
                       </th>
-                     
-                      <th style="width: 20%;text-align: center;">
-                        Address
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                            Phone
-                            </th>
-                         
-                            <th style="width: 20%;text-align: center;">
-                        Payment Status
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                      Order
-                            </th>
                   </tr>
               </thead>
               <tbody>
-             @foreach($data as $key=>$value)
+           
+           @foreach($data as $voucher)
                   <tr>
-                      <td>{{$key + 1}}</td>
-                      <td class="text-center">
-                            {{$value->users->name}}
-                      </td>
                     
                       <td class="text-center">
-                            {{$value->fullname}}
-                      </td>
-                    
-                      <td class="text-center">
-                            {{$value->address}}
+                        {{$voucher->id}}
+                          
                       </td>
                       <td class="text-center">
-                            {{$value->phone}}
-                      </td>
-                     
-                      <td class="text-center">
-                      {{$value->payment_status}}
-                      </td>  
-                      @endforeach
-                      <td class="text-center">
-                      <table class="table table-striped " style="margin-top: 0px;margin-right: 100px;">
-                      <th style="width: 20%;text-align: center;">
-                         User Name
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                         Proudct Name
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                        Quanity
-                            </th>
-                      <th style="width: 20%;text-align: center;">
-                     
-                        Price
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                     
-                            Total
-                            </th>
-        @foreach($productBooking as $productBooking )
-            <tr>
-            <td class="text-center">
-                            {{$productBooking->users->name}}
-                      </td>
-            <td class="text-center">
-                            {{$productBooking->product->name}}
+                      {{$voucher->voucher_name}}
                       </td>
                       <td class="text-center">
-                      {{$productBooking->quanity}}
-                      </td>  
-                      <td class="text-center">
-                      {{$productBooking->price}}
+                    {{$voucher->voucher_price}}
                       </td>
-                      <td class="text-center">
-                      {{$productBooking->quanity * $productBooking->price}}
+                  
+                      <td class="project-actions text-right" >
+                      </a>
+                          <form action="{{route('voucher.edit')}}" method="get" enctype="multipart/form">
+									@csrf
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              <button type="submit" class="btn btn-info btn-sm"> Edit</button>   
+                              <input type="hidden" name="voucher_id" value="{{$voucher->id}}" />   
+                              </form>
+                          <form action="{{route('voucher.delete')}}" method="get" enctype="multipart/form">
+									@csrf
+                              <i class="fas fa-trash">
+                              </i>
+                             <button type="submit" class="btn btn-danger btn-sm"> Delete</button>
+                              <input type="hidden" name="voucher_id" value="{{$voucher->id}}" />
+                              </form>
                       </td>
-                    
-                      </tr>
-            @endforeach
-</table>
-                      </td>  
                   </tr>
                  
-   
-          
+@endforeach;
+
               </tbody>
           </table>
         
 </div>
+   <a href="{{url('admin/addvoucher')}}">
+<button style="margin-left: 235px;padding: 10px;border: 1px solid blue;background: blue;color: white;border-radius: 5px;font-weight: 600;">
+Add Voucher
+</button>
 </a>
             <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

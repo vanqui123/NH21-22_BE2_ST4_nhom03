@@ -15,6 +15,9 @@ class CreateUserOrderTable extends Migration
     {
         Schema::create('user_order', function (Blueprint $table) {
             $table->increments('useroder_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->
+            onUpdate('cascade')->onDelete('cascade');
             $table->string('fullname');
             $table->string('address');
             $table->string('phone');

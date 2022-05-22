@@ -16,6 +16,8 @@ use App\Http\Controllers\BookingAdminController;
 use App\Http\Controllers\UserOrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\ProtypeAdminController;
+use App\Http\Controllers\VoucherAdminController;
+
 
 
 
@@ -77,6 +79,7 @@ Route::post('checkout', [UserOrderAdminController::class, 'addUserOrder'])->name
 //Search func
 Route::get('/search/key', [SearchController::class, 'search'])->name('search');
 
+
 //Products/Protype ADMIN
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('productadmin',[ProductAdminController::class,'show'])->name('productadmin');
@@ -104,6 +107,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 
 
+
 //Blog admin
 Route::get('admin/blogadmin',[BlogAdminController::class,'show'])->name('show.blog');
 Route::get('admin/addblog',[BlogAdminController::class,'add']);
@@ -114,9 +118,21 @@ Route::post('admin/editblog/edit',[BlogAdminController::class,'editblog'])->name
 //Contact Admin 
 Route::get('admin/contactadmin',[ContactAdminController::class,'show'])->name('show.contact');
 
+//Voucher Admin
+Route::get('admin/voucheradmin',[VoucherAdminController::class,'show'])->name('show.voucher');
+Route::get('admin/addvoucher',[VoucherAdminController::class,'add']);
+Route::post('admin/voucheradmin', [VoucherAdminController::class, 'addVoucher'])->name('voucher.add');
+Route::get('admin/editvoucher',[VoucherAdminController::class,'edit'])->name('voucher.edit');
+Route::post('admin/editvoucher/edit',[VoucherAdminController::class,'editVoucher'])->name('voucheredit.edit');
+
+
+
+Route::get('admin/addvoucher/delete',[VoucherAdminController::class,'deleteVoucher'])->name('voucher.delete');
+
+
 //Cart Admin
-//Cần có USER ID DỂ ĐẦY ĐỦ RÕ RÀNG HƠN
 Route::get('admin/cartadmin',[UserOrderAdminController::class,'show'])->name('show.booking');
+
 
 
 

@@ -75,108 +75,55 @@
                     </div>
                 </nav>
             </div>
-        
-            <table class="table table-striped " style="margin-top: 55px;margin-left: 215px;">
-              <thead>
-                  <tr>
-                      <th style="width: 0%;text-align: center;">
-                          STT
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                         User Name
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                         Full Name
-                      </th>
-                     
-                      <th style="width: 20%;text-align: center;">
-                        Address
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                            Phone
-                            </th>
-                         
-                            <th style="width: 20%;text-align: center;">
-                        Payment Status
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                      Order
-                            </th>
-                  </tr>
-              </thead>
-              <tbody>
-             @foreach($data as $key=>$value)
-                  <tr>
-                      <td>{{$key + 1}}</td>
-                      <td class="text-center">
-                            {{$value->users->name}}
-                      </td>
-                    
-                      <td class="text-center">
-                            {{$value->fullname}}
-                      </td>
-                    
-                      <td class="text-center">
-                            {{$value->address}}
-                      </td>
-                      <td class="text-center">
-                            {{$value->phone}}
-                      </td>
-                     
-                      <td class="text-center">
-                      {{$value->payment_status}}
-                      </td>  
-                      @endforeach
-                      <td class="text-center">
-                      <table class="table table-striped " style="margin-top: 0px;margin-right: 100px;">
-                      <th style="width: 20%;text-align: center;">
-                         User Name
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                         Proudct Name
-                      </th>
-                      <th style="width: 20%;text-align: center;">
-                        Quanity
-                            </th>
-                      <th style="width: 20%;text-align: center;">
-                     
-                        Price
-                            </th>
-                            <th style="width: 20%;text-align: center;">
-                     
-                            Total
-                            </th>
-        @foreach($productBooking as $productBooking )
-            <tr>
-            <td class="text-center">
-                            {{$productBooking->users->name}}
-                      </td>
-            <td class="text-center">
-                            {{$productBooking->product->name}}
-                      </td>
-                      <td class="text-center">
-                      {{$productBooking->quanity}}
-                      </td>  
-                      <td class="text-center">
-                      {{$productBooking->price}}
-                      </td>
-                      <td class="text-center">
-                      {{$productBooking->quanity * $productBooking->price}}
-                      </td>
-                    
-                      </tr>
-            @endforeach
-</table>
-                      </td>  
-                  </tr>
-                 
-   
-          
-              </tbody>
-          </table>
+            @if(session('status'))
+            <h6 class="alert alert-success" style="position: absolute;left: 500px;top: 50px;z-index: 1;">{{ session('status') }}</h6>
+            @endif
+            <form action="{{ route('voucheredit.edit') }}" method="post" enctype="multipart/form-data" style="margin-left: 240px;width: 100%;">
+ @csrf
+            <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">General</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          @foreach($voucher as $value)
+          <div class="card-body">
+            <div class="form-group">
+              <label for="inputClientCompany">Voucher Name</label>
+              <input type="hidden"  value="{{$value->id}}" class="form-control" name="voucher_id">
+
+              <input type="text"  value="{{$value->voucher_name}}" class="form-control" name="voucher_name">
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Voucher_price</label>
+              <input id="inputDescription" placeholder="{{$value->voucher_price}}" class="form-control"  name="voucher_price">
+            </div>
+          </div>
+          @endforeach
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a href="#" class="btn btn-secondary">Cancel</a>
+        <button type="submit" name="submit" class="btn btn-success float-right">
+        Edit Voucher
+</button>
+      </div>
+    </div>
+  </section>
+  </form>
         
 </div>
-</a>
             <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
