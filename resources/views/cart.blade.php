@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-
+@include('sweetalert::alert')
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -91,10 +91,7 @@
 						   
 							  <td class="total">{{number_format($total)  }} vnđ</td>
 								@endforeach
-								<form action="{{ route('cart.clear') }}" method="POST">
-                            @csrf
-                            <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
-                          </form>
+						
 						      </tr><!-- END TR-->
 						    </tbody>
 						  </table>

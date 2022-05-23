@@ -25,11 +25,11 @@ class WishListController extends Controller
         return view('wishList',['wishList'=>$wishLists]);
     }
 
-            public function destroy(WishList $wishList,Request $request)
-            {
-                $id = $request->id;
-                $wishList = WishList::where('id',$id)->first();
-                $wishList->delete();
-                return redirect()->route('wistList.list');
-            }
+     public function destroy(WishList $wishList,Request $request)
+     {
+          $id = $request->id;
+          $wishList = WishList::where('id',$id)->first();
+          $wishList->delete();
+          return redirect()->route('wistList.list');
+      }
 }

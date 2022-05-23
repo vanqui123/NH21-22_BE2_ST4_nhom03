@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+@include('sweetalert::alert')
+
     <section id="home-section" class="hero">
 		  <div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
@@ -177,7 +179,7 @@
                     @else
                     <button type="submit"  style="border-radius: 50px;color: white; padding: 0px 0px;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;"
                    >
-	    								<a class="buy-now d-flex justify-content-center align-items-center " href="{{route('register')}}"><i class="ion-ios-cart"></i></a> 
+	    								<a class="buy-now d-flex justify-content-center align-items-center " href="{{route('login')}}"><i class="ion-ios-cart"></i></a> 
 	    							</button>
                     @endif
 			</form>

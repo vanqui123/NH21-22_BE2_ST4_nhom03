@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 
 use Illuminate\Http\Request;
-
+use Alert;
 class ContactController extends Controller
 {
     /**
@@ -23,8 +23,14 @@ class ContactController extends Controller
             'email' =>$request->email,
             'message' =>$request->message,
         );
-        Contact::insert($data);
-        session()->flash('success', 'Product is Added to Message Successfully !');
+      $contact =   Contact::insert($data);
+      if($contact){
+        Alert::success('Success', 'Voucher Success');
+      }
+      else{
+        Alert::error('Error', 'Voucher Error');
+      }
+        return redirect()->back();
 
        
     }

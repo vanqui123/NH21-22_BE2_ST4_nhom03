@@ -7,7 +7,7 @@ use App\Models\UserOder;
 use App\Models\ProductBooking;
 use App\Models\OrderManagent;
 use Auth;
-
+use   Alert;
 
 class UserOrderAdminController extends Controller
 {
@@ -30,8 +30,14 @@ class UserOrderAdminController extends Controller
             'payment_status' =>$request->payment_status,
         );
        $UserOder =  UserOder::insert($data);
-  
-        return redirect()->route('user_order.add');
+       if($UserOder){
+        Alert::success('Success', 'Place Order Success');
+    
+            }
+       else {
+                Alert::error('Error', 'Place Order Error');
+            }
+        return redirect()->route('index');
     }
 
     public function show(Request $request){

@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+@include('sweetalert::alert')
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -52,7 +53,7 @@
 									   @if(Auth::user())
 									   <button type="submit" class="btn btn-success send btn-sm">Send </button>      										   
 			@else
-			<button type="submit" class="btn btn-success send btn-sm"><a href="{{route('register')}}" style="color: white;"> Send</a></button> 
+			<button type="submit" class="btn btn-success send btn-sm"><a href="{{route('login')}}" style="color: white;"> Send</a></button> 
 			@endif 								   
 									   </div>								   
 								   </div>							   

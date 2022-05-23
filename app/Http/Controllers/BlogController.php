@@ -10,8 +10,7 @@ class BlogController extends Controller
 {
     //lấy tất cả blog
     function getAllBlog(){
-        $cate = Blog::limit(12)->get();
-
+        $cate = Blog::All();
         return view('blog',['data'=>$cate]);
     }
     function getBlogSingle(Request $request){

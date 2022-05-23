@@ -56,11 +56,10 @@
 			  <div class="col-lg-6 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Coupon Code</h3>
-    					<p>Enter your coupon code if you have one</p>
+    				
   						<form action="{{route('voucher.adduser')}}" method="post" enctype="multipart/form"  class="info">
 	              		@csrf
 						  <div class="form-group">
-	              	<label for="">Coupon code</label>
 	                <input type="text" class="form-control text-left px-3" name="voucher_name" placeholder="">
 	              </div>
 	     
@@ -122,13 +121,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											   <label><input type="radio" name="payment_status" value="Payment" class="mr-2"> Check Payment</label>
-											</div>
-										</div>
-									</div>
+								
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
@@ -136,14 +129,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="checkbox">
-											   <label><input type="checkbox" name="payment_status" value="" class="mr-2"> I have read and accept the terms and conditions</label>
-											</div>
-										</div>
-									</div>
-									<label><input type="hidden" name="voucher_id" value="{{ $voucher['id']}}" class="mr-2"> Direct Bank Tranfer</label>
+									
+									<input type="hidden" name="voucher_id" value="{{ $voucher['id']}}" class="mr-2">
 									<p><button type="submit" class="btn btn-primary py-3 px-4">Place an order</button></p>
 								</div>
 	          	</div>

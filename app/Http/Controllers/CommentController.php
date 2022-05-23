@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use Auth;
 use Illuminate\Http\Request;
-
+use Alert;
 class CommentController extends Controller
 {
     public function addComment(Request $request)
@@ -16,7 +16,13 @@ class CommentController extends Controller
             'text_comment'=>$request->text_comment,
             'rate'=>$request->rating
         );
-        Comment::create($data);
+        $conmment =  Comment::create($data);
+        if($conmment){
+            Alert::success('Success', 'Add Comment Success');
+        }
+        else{
+            Alert::error('Error', 'Add Comment Error');
+        }
         return redirect()->back();
     }
 }
