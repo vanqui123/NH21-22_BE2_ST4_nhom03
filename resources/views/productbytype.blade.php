@@ -17,12 +17,11 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="shop" class="active">All</a></li>
+					<li><a href="{{ url('shop') }}" class="active">All</a></li>
 					@foreach ($type as $value)
 					<li><a href="{{route('productByType', ['id'=>$value->type_id])}}">{{$value->type_name}}</a></li>
 					@endforeach
 				</ul>
-
 			</div>
 		</div>
 		<form action="{{route('search')}}" method="get">
@@ -36,11 +35,10 @@
 			</div>
 		</form>
 		<div class="row">
-			@if(isset($data))
-			@foreach($data as $value)
+			@foreach($product_typeid as $value)
 			<div class="col-md-6 col-lg-3 ftco-animate">
 				<div class="product">
-					<a href="#" class="img-prod"><img class="img-fluid" src="images/{{ $value['image']}}" alt="Colorlib Template">
+					<a href="#" class="img-prod"><img class="img-fluid" src="../images/{{ $value->image}}" alt="Colorlib Template">
 						<span class="status">30%</span>
 						<div class="overlay"></div>
 					</a>
@@ -48,12 +46,12 @@
 						<h3><a href="#">{{$value->name}}</a></h3>
 						<div class="d-flex">
 							<div class="pricing">
-								<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($value['price'])}} VND</span></p>
+								<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($value->price)}} VND</span></p>
 							</div>
 						</div>
 						<div class="bottom-area d-flex px-3">
 							<div class="m-auto d-flex">
-								<a href="product-single/{{$value['product_id']}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+								<a href="product-single/{{$value->product_id}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 									<span><i class="ion-ios-menu"></i></span>
 								</a>
 								<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
@@ -68,11 +66,10 @@
 				</div>
 			</div>
 			@endforeach
-			@endif
 		</div>
 		<div class="row">
 			<div class="col md-12 mt-5">
-				{{$data->links()}}
+				{{$product_typeid->links()}}
 			</div>
 		</div>
 
