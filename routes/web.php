@@ -20,20 +20,7 @@ use App\Http\Controllers\VoucherAdminController;
 use App\Http\Controllers\VoucherUser;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\CommentBlogController
-;
-
-
-
-
-
-
-
-
-
-
-
-
+use App\Http\Controllers\CommentBlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,6 +45,9 @@ require __DIR__.'/auth.php';
 
 Route::get('blog-single/{id}',[BlogController::class,'get_detailBlog']);
 Route::get('/',[ProductController::class,'getAllProduct'])->name('index');
+Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
+Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop')->name('shop');
+Route::get('shop/{id}',[ProtypeController::class,'getProductType_id'])->name('productByType');
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID'])->name('productsingle.show');
 Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop');
 Route::get('shop/{type_id}',[ProtypeController::class,'getProductType_id']);
@@ -141,8 +131,6 @@ Route::get('admin/addvoucher',[VoucherAdminController::class,'add']);
 Route::post('admin/voucheradmin', [VoucherAdminController::class, 'addVoucher'])->name('voucher.add');
 Route::get('admin/editvoucher',[VoucherAdminController::class,'edit'])->name('voucher.edit');
 Route::post('admin/editvoucher/edit',[VoucherAdminController::class,'editVoucher'])->name('voucheredit.edit');
-//Voucher User
-Route::post('/cart/voucher', [ProductBookingController::class, 'show'])->name('voucher.adduser');
 
 
 

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
 class Roles extends Seeder
 {
     /**
@@ -13,12 +14,12 @@ class Roles extends Seeder
      */
     public function run()
     {
-        $roles = ['admin','user'];
-        foreach($roles as $value){
-        DB::table('roles')->insert([
-            'roles_name'=> $value,
+        $roles = ['admin', 'user'];
+        foreach ($roles as $value) {
+            DB::table('roles')->insert([
+                'roles_name' => $value,
 
-        ]);
-    }
+            ]);
+        }
     }
 }
