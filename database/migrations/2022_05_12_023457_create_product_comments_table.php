@@ -13,17 +13,20 @@ class CreateProductCommentsTable extends Migration
      */
     public function up()
     {
-        // Schema::create('product_comments', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->unsignedBigInteger('user_id')->nullable();
-        //     $table->unsignedBigInteger('product_id')->nullable();
-        //     $table->text('comment');
-        //     $table->enum('status', ['active', 'inactive'])->default('active');
-        //     $table->text('replied_comment')->nullable();
-        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-        //     $table->foreign('product_id')->references('id')->on('products')->onDelete('SET NULL');
-        //     $table->timestamps();
-        // });
+        Schema::create('product_comments', function (Blueprint $table) {
+            $table->bigIncrements('comment_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->
+            onUpdate('cascade')->onDelete('cascade');
+            $table->bigInteger('product_id')->unsigned();
+                $table->foreign('product_id')->references('product_id')->on('product')->
+                onUpdate('cascade')->onDelete('cascade');
+                $table->string('text_comment');
+                $table->string('rate');
+                $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on
+                update CURRENT_TIMESTAMP'));
+        });
     }
 
     /**

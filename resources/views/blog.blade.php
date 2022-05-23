@@ -15,9 +15,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 ftco-animate">
+			
 				<div class="row">
 					@foreach($data as $value)
 					<div class="col-md-12 d-flex ftco-animate">
+					<form action="{{route('blogsingle.show')}}" method="get">
 						<div class="blog-entry align-self-stretch d-md-flex">
 							<a href="{{url('blog-single')}}" class="block-20" style="background-image: url('images/{{$value->image}}');">
 							</a>
@@ -28,13 +30,26 @@
 									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
 								</div>
 								<h3 class="heading"><a href="#">{{$value->title}}</a></h3>
-								<p>{{$value->slug}}</p>
-								<p><a href="{{url('blog-single')}}" class="btn btn-primary py-2 px-3">Read more</a></p>
+								<p style="  	display: block;
+							display: -webkit-box;
+							height: 16px*1.3*3;
+							font-size: 16px;
+							line-height: 1.3;
+							-webkit-line-clamp: 3;  /* số dòng hiển thị */
+							-webkit-box-orient: vertical;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							margin-top:10px;">{{$value->slug}}</p>
+							<input type="hidden" name="id" value="{{$value->id}}">
+								<button style="border: 1px solid #82ae46;background: #82ae46;border-radius: 20px;" type="submit" ><a  class="btn btn-primary py-2 px-3">Read more</a></button>
 							</div>
+					
 						</div>
+						</form>
 					</div>
 					@endforeach
 				</div>
+		
 			</div> <!-- .col-md-8 -->
 			<div class="col-lg-4 sidebar ftco-animate">
 				<div class="sidebar-box">

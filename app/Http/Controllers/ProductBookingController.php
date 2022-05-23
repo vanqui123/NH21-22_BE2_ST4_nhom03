@@ -7,7 +7,7 @@ use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Voucher;
 use Alert;
-
+use Auth;
 class ProductBookingController extends Controller
 {
     /**
@@ -65,17 +65,19 @@ class ProductBookingController extends Controller
      */
     public function show(Request $request)
     {
-        $product_bookings = ProductBooking::All();
+        $user_id = Auth::user()->id;
+        $product_bookings = ProductBooking::where('user_id', $user_id)->get();
         $voucher_name = $request->voucher_name;
         $voucher = Voucher::where('voucher_name',$voucher_name)->first(); 
-   
+      
         if($voucher_name == $voucher['voucher_name']  ){
+            if($voucher){
             Alert::success('Success', 'Voucher Success');
+        }
                 }
                 else if($voucher_name != $voucher['voucher_name']) {
                     Alert::error('Error', 'Voucher Error');
                 }
-                
         return view('checkout',['data'=>$product_bookings,'voucher'=>$voucher]);
     }
 

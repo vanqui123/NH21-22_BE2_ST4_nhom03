@@ -17,13 +17,10 @@ use App\Http\Controllers\UserOrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminController;
 use App\Http\Controllers\Admin\ProtypeAdminController;
 use App\Http\Controllers\VoucherAdminController;
-
-
-
-
-
-
-
+use App\Http\Controllers\VoucherUser;
+use App\Http\Controllers\WishListController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CommentBlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,11 +44,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('blog-single/{sid}',[BlogController::class,'get_detailBlog']);
+Route::get('blog-single/{id}',[BlogController::class,'get_detailBlog']);
 Route::get('/',[ProductController::class,'getAllProduct'])->name('index');
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
 Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop')->name('shop');
 Route::get('shop/{id}',[ProtypeController::class,'getProductType_id'])->name('productByType');
+Route::get('product-single/{product_id}',[ProductController::class,'getProductID'])->name('productsingle.show');
+Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop');
+Route::get('shop/{type_id}',[ProtypeController::class,'getProductType_id']);
 Route::get('load-cart-data', [CartController::class, 'cartCount']);
 Route::get('cart', [CartController::class, 'cartList'])->middleware('isLogin')->name('cart.list');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
@@ -59,14 +59,22 @@ Route::get('cart/delete', [CartController::class, 'destroy'])->name('cart.delete
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 Route::get('cart/updateDe', [CartController::class, 'decreaseQuantity'])->name('cart.decrease');
 Route::get('cart/updateIn', [CartController::class, 'increaseQuantity'])->name('cart.increase');
+//WishList
+Route::post('wishlist', [WishListController::class, 'addToWishList'])->name('wishlist.store');
+Route::get('wishlist', [WishListController::class, 'wishList'])->name('wistList.list');
+Route::get('wishlist/delete', [WishListController::class, 'destroy'])->name('wishlist.delete');
+// Comment Product
+Route::post('product-single/add', [CommentController::class, 'addComment'])->name('comment.store');
+//Comment Blog
+Route::post('blog-single/add', [CommentBlogController::class, 'addCommentBlog'])->name('commentblog.store');
+
 //Admin
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
-
-
-
 //Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
 Route::get('blog', [BlogController::class, 'getAllBlog']);
+Route::get('blogsingle', [BlogController::class, 'getBlogSingle'])->name('blogsingle.show');
+
 
 //Booking 
 Route::get('product/booking', [ProductBookingController::class, 'store'])->name('product');

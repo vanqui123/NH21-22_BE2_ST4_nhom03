@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Blog;
 
 class BlogAdminController extends Controller
 {
 
     public function show(){
-        $blog = Category::All();
+        $blog = Blog::All();
         return view('admin/blogadmin',['data'=>$blog]);
     }
     public function add(){
-        $blog = Category::All();
+        $blog = Blog::All();
         return view('admin/addblog');
     }
     public function edit(Request $request){
         $id = $request->id;
-        $blog = Category::find($id)->limit(1)->get();
+        $blog = Blog::find($id)->limit(1)->get();
      
         return view('admin/editblog',['blog'=>$blog]);
     }
@@ -35,13 +35,13 @@ class BlogAdminController extends Controller
             'slug' =>$request->slug,
             'image' =>$image = $filename,
         );
-        Category::insert($data);
+        Blog::insert($data);
         return redirect()->back()->with('status',' Added Successfully');
     
     }
     public function editblog(Request $request){
         $id = $request->id;
-        $blog = Category::find($id)->get();
+        $blog = Blog::find($id)->get();
         if($request->hasfile('image')){
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
@@ -57,7 +57,7 @@ class BlogAdminController extends Controller
     }
     public function deleteBlog(Request $request){
             $id = $request->id;
-            $product = Category::where('id',$id)->first();
+            $product = Blog::where('id',$id)->first();
             $product->delete();
             return redirect()->route('show.blog')->with('status','Delete Successfully');
     }

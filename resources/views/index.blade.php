@@ -151,7 +151,7 @@
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">{{$value->name}}</a></h3>
+    						<h3><a href="#" style="font-size: 1rem;" >{{$value->name}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{number_format($value->price)}} VND</span></p>
@@ -162,12 +162,42 @@
 	    							<a href="product-single/{{$value->product_id}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                    <form method="POST" action="{{ route('cart.store') }}" enctype="multipart/form-data">
+	@csrf
+						<input type="hidden"  value="{{$value->product_id}}" name="product_id">
+	             	<input type="hidden"  value="{{$value->name}}" name="name">
+	             	<input type="hidden"   value="{{$value->price}}" name="price">
+	             	<input type="hidden" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+					 <input type="hidden"  value="{{$value->image}}" name="image">	   
+           @if(Auth::user())         			         
+           <button type="submit" style="border-radius: 50px;padding: 5px 13px;color: white;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;"
+            class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
+	    							</button>
+                    @else
+                    <button type="submit"  style="border-radius: 50px;color: white; padding: 0px 0px;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;"
+                   >
+	    								<a class="buy-now d-flex justify-content-center align-items-center " href="{{route('register')}}"><i class="ion-ios-cart"></i></a> 
+	    							</button>
+                    @endif
+			</form>
+	    						
+                    <form action="{{route('wishlist.store')}}" method="post">
+                      @csrf
+                      <input type="hidden" name="product_id" value="{{$value->product_id}}"/>
+                      @if(Auth::user())
+                      <button style="border-radius: 50px;padding: 5px 13px;color: white;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;"
+                       type="submit" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
+	    							</button>
+			            @else
+                 <button style="border-radius: 50px;color: white;background: #82ae46;border: 1px solid #82ae46; padding: 0px 0px;cursor: pointer;"
+                   type="submit">
+                 <a  class="heart d-flex justify-content-center align-items-center " href="{{route('register')}}">	   <i class="ion-ios-heart"></i>   </a>
+                      </button>
+                  
+			          @endif 
+                    </form>
     							</div>
     						</div>
     					</div>
