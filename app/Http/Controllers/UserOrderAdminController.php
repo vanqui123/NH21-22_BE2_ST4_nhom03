@@ -12,7 +12,13 @@ use Auth;
 class UserOrderAdminController extends Controller
 {
     public function addUserOrder(Request $request){
-        $voucher_id =$request->voucher_id;
+        $voucher_id = 0;
+        if($voucher_id > 0){
+            $voucher_id =$request->voucher_id;
+
+        }else{
+            $voucher_id = 1;
+        }
         
         $data = array(
             'fullname' =>$request->fullname,

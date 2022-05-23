@@ -20,6 +20,8 @@ use App\Http\Controllers\VoucherAdminController;
 use App\Http\Controllers\VoucherUser;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CommentBlogController
+;
 
 
 
@@ -71,8 +73,10 @@ Route::get('cart/updateIn', [CartController::class, 'increaseQuantity'])->name('
 Route::post('wishlist', [WishListController::class, 'addToWishList'])->name('wishlist.store');
 Route::get('wishlist', [WishListController::class, 'wishList'])->name('wistList.list');
 Route::get('wishlist/delete', [WishListController::class, 'destroy'])->name('wishlist.delete');
-// Comment 
+// Comment Product
 Route::post('product-single/add', [CommentController::class, 'addComment'])->name('comment.store');
+//Comment Blog
+Route::post('blog-single/add', [CommentBlogController::class, 'addCommentBlog'])->name('commentblog.store');
 
 //Admin
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');

@@ -62,7 +62,7 @@
 						        <input type="hidden" id="token" value="{{ csrf_token() }}">
 						        <input type="hidden" name="user_id" value="{{$cart->user_id}}">
 
-								<td class="price">{{$cart->price}}</td>
+								<td class="price">{{number_format($cart->price)}} vnđ</td>
 						       
 						        
 						        <td class="quantity">
@@ -89,7 +89,7 @@
 					          	</div>
 					          </td>
 						   
-							  <td class="total">{{$total  }}</td>
+							  <td class="total">{{number_format($total)  }} vnđ</td>
 								@endforeach
 								<form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
@@ -111,21 +111,14 @@
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Cart Totals</h3>
-    					<p class="d-flex">
-    						<span>Subtotal</span>
-    						<span>0</span>
-    					</p>
-    					<p class="d-flex">
-    						<span>Delivery</span>
-    						<span>$0.00</span>
-    					</p>
+
     				
     					<hr>
     					<p class="d-flex total-price">
 				
     						<span>Total</span>
     						<span>
-							{{number_format($sum)}}	
+							{{number_format($sum)}} vnđ	
 							</span>
     					</p>
     				</div>

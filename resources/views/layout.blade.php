@@ -109,9 +109,7 @@ use App\Models\Cart;
 
             </div>
           </li>
-          <form action="{{url('load-cart-data')}}" method="get">
-            <li class="nav-item cta cta-colored"><a href="{{url('cart')}}" class="nav-link"><span class="icon-shopping_cart cart_count">0</span></a></li>
-          </form>
+      
         </ul>
       </div>
     </div>
