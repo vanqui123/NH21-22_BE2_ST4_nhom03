@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+@include('sweetalert::alert')
 
     <div class="hero-wrap hero-bread" style="background-image: url('../images/bg_1.jpg');">
       <div class="container">
@@ -77,7 +78,7 @@
 			   @if(Auth::user())
 			   <p  class="btn btn-black py-3 px-5"><button style="cursor: pointer;" type="submit">Add to Cart</button></p>
 			@else
-			<p  class="btn btn-black py-3 px-5"><button style="cursor: pointer;" ><a href="{{route('register')}}"> Add to Cart</a></button></p>
+			<p  class="btn btn-black py-3 px-5"><button style="cursor: pointer;" ><a href="{{route('login')}}"> Add to Cart</a></button></p>
 			@endif 
     			</div>
     		</div>
@@ -111,7 +112,7 @@
 									   @if(Auth::user())
 									   <button type="submit" class="btn btn-success send btn-sm">Send </button>      										   
 			@else
-			<button type="submit" class="btn btn-success send btn-sm"><a href="{{route('register')}}" style="color: white;"> Send</a></button> 
+			<button type="submit" class="btn btn-success send btn-sm"><a href="{{route('login')}}" style="color: white;"> Send</a></button> 
 			@endif 								   
 									   </div>								   
 								   </div>							   

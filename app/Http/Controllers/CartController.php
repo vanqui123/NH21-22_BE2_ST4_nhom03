@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-
+use Alert;
 use Auth;
 
 class CartController extends Controller
@@ -43,34 +43,28 @@ class CartController extends Controller
         $id = $request->id;
         $product = Cart::where('id',$id)->get();
         $qty =  $product[0]->quanity + 1;
-        Cart::where('id',$id)->update(["quanity"=>$qty]);
+        $cart =  Cart::where('id',$id)->update(["quanity"=>$qty]);
+        if($cart){
+            Alert::success('Success', 'Update Success');
+        }
+        else{
+            Alert::error('Error', 'Update Error');
+        }
         return redirect()->route('cart.list');
-
-        
     }
     public function decreaseQuantity(Request $request){
         $id = $request->id;
         $product = Cart::where('id',$id)->get();
         $qty =  $product[0]->quanity - 1;
-        Cart::where('id',$id)->update(["quanity"=>$qty]);
+       $cart =  Cart::where('id',$id)->update(["quanity"=>$qty]);
+        if($cart){
+            Alert::success('Success', 'Update Success');
+        }
+        else{
+            Alert::error('Error', 'Update Error');
+        }
         return redirect()->route('cart.list');
     }
-    // public function updateCart(Request $request)
-    // {
-    //    \Cart::update(
-    //         $request->id,
-    //         [
-    //              'quantity' => [
-    //                 'relative' => false,
-    //                 'value' => $request->quantity
-    //             ],
-    //         ]
-    //     );
-
-    //     session()->flash('success', 'Item Cart is Updated Successfully !');
-
-    //     return redirect()->route('cart.list');
-    // }
 
     public function destroy(Cart $cart,Request $request)
     {
@@ -80,16 +74,4 @@ class CartController extends Controller
         return redirect()->route('cart.list');
     }
 
-    public function cartCount(){
-        $cartCount = Cart::totalFloat();
-        var_dump($cartCount);
-        return response()->json(['count',$cart]);
-        
-    }
-    public function clearAllCart()
-    {
-      Cart::clear();
-        session()->flash('success', 'All Item Cart Clear Successfully !');
-        return redirect()->route('cart.list');
-    }
 }
