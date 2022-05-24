@@ -31,7 +31,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        if ($request->user()->role == 'admin') {
+            return redirect()->route('admin.index');
+        } else {
+            request()->session()->flash('error', 'You do not have any permission to access this page');
+            return redirect()->back();
+        }
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

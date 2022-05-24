@@ -18,7 +18,6 @@ class Roles extends Seeder
         foreach ($roles as $value) {
             DB::table('roles')->insert([
                 'roles_name' => $value,
-
             ]);
         }
     }

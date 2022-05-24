@@ -68,7 +68,7 @@ Route::post('product-single/add', [CommentController::class, 'addComment'])->nam
 Route::post('blog-single/add', [CommentBlogController::class, 'addCommentBlog'])->name('commentblog.store');
 
 //Admin
-Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index')->middleware('checkRole:admin');
 //Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
 Route::get('blog', [BlogController::class, 'getAllBlog']);
@@ -92,15 +92,15 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('productadmin',[ProductAdminController::class,'show'])->name('productadmin');
     Route::get('addproduct',[ProductAdminController::class,'add'])->name('addproduct');
     Route::post('addproduct',[ProductAdminController::class,'postAdd'])->name('postAdd');
-    Route::get('edit/{id}',[ProductAdminController::class,'editProduct'])->name('editProduct');
-    Route::post('update',[ProductAdminController::class,'postEdit'])->name('postEdit');
+    Route::get('editProduct/{id}',[ProductAdminController::class,'editProduct'])->name('editProduct');
+    Route::post('updateProduct',[ProductAdminController::class,'postEdit'])->name('postEdit');
     Route::get('delete',[ProductAdminController::class,'deleteProduct'])->name('deleteProduct');
     Route::get('filter',[ProductAdminController::class,'getAllProtypes']);
 
     Route::get('protypeadmin',[ProtypeAdminController::class,'show'])->name('protypeadmin');
     Route::get('addprotype',[ProtypeAdminController::class,'add'])->name('addprotype');
     Route::post('addprotype',[ProtypeAdminController::class,'postAdd'])->name('postAddProtype');
-    Route::get('edit/{id}',[ProtypeAdminController::class,'editProtype'])->name('editProduct');
+    Route::get('edit/{id}',[ProtypeAdminController::class,'editProtype'])->name('editProtype');
     Route::post('update',[ProtypeAdminController::class,'postEdit'])->name('postEditProtype');
     Route::get('deleteprotype',[ProtypeAdminController::class,'deleteProtype'])->name('deleteProtype');
 

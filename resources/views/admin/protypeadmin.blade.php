@@ -130,7 +130,7 @@
                     </td>
                     <td class="project-actions text-center">
                         </a>
-                        <form action="{{route('admin.editProduct',['id'=>$value->type_id])}}" method="get" enctype="multipart/form">
+                        <form action="{{route('admin.editProtype',['id'=>$value->type_id])}}" method="get" enctype="multipart/form">
                             @csrf
                             <i class="fas fa-pencil-alt">
                             </i>

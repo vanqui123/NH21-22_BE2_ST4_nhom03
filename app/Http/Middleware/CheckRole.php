@@ -14,9 +14,9 @@ class CheckRole
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle($request, Closure $next,$role)
+    public function handle($request, Closure $next)
     {
-        if ($request->user()->role == $role) {
+        if ($request->user()->role == 'admin') {
             return $next($request);
         } else {
             request()->session()->flash('error', 'You do not have any permission to access this page');
