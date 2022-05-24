@@ -44,9 +44,9 @@
 				
 						        </td>
 						        
-						        <td class="price">{{number_format($wishLists->product->price)}}</td>
+						        <td class="price">{{number_format($wishLists->product->price)."đ"}}</td>
 						        
-								<td class="total">{{number_format($wishLists->product->price)}}</td>
+								<td class="total">{{number_format($wishLists->product->price)."đ"}}</td>
 					          </td>
 						        @endforeach
 						        
