@@ -77,6 +77,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Voucher
                             </a>
+                            <a class="nav-link" href="{{route('show.user')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                User
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

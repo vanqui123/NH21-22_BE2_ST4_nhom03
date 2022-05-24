@@ -76,7 +76,7 @@ use App\Models\Cart;
             <div class="dropdown-menu" aria-labelledby="dropdown04">
               <a class="dropdown-item" href="{{url('shop')}}">Shop</a>
               <a class="dropdown-item" href="{{url('wishlist')}}">Wishlist</a>
-              <a class="dropdown-item" href="{{url('product-single')}}">Single Product</a>
+              <a class="dropdown-item" href="{{url('orderproduct')}}">Order Product</a>
               <a class="dropdown-item" href="{{url('cart')}}">Cart</a>
               <a class="dropdown-item" href="{{url('checkout')}}">Checkout</a>
             </div>

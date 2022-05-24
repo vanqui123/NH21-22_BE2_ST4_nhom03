@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 class AdminController extends Controller
 {
@@ -13,7 +15,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $type_product = Product::where('type_id',1)->get();
+        $type_product2 = Product::where('type_id',2)->get();
+        $type_product3 = Product::where('type_id',3)->get();
+        $type_product4 = Product::where('type_id',4)->get();
+
+            $CountFruit =  count($type_product);
+            $CountVegatables = count($type_product2);
+            $CountJuices  = count($type_product3);
+            $CountDried = count($type_product4);
+            return view('admin.index',['CountFruit'=>$CountFruit,'CountVegatables'=>$CountVegatables,'CountJuices'=>$CountJuices,'CountDried'=>$CountDried]);
     }
 
     /**
@@ -32,9 +43,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+    
     }
 
     /**
@@ -45,7 +56,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

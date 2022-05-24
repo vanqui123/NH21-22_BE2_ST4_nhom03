@@ -21,6 +21,8 @@ use App\Http\Controllers\VoucherUser;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CommentBlogController;
+use App\Http\Controllers\UserAminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +54,7 @@ Route::get('product-single/{product_id}',[ProductController::class,'getProductID
 Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop');
 Route::get('shop/{type_id}',[ProtypeController::class,'getProductType_id']);
 Route::get('load-cart-data', [CartController::class, 'cartCount']);
-Route::get('cart', [CartController::class, 'cartList'])->middleware('isLogin')->name('cart.list');
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list')->middleware('isLogin');
 Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
 Route::get('cart/delete', [CartController::class, 'destroy'])->name('cart.delete');
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
@@ -78,6 +80,8 @@ Route::get('blogsingle', [BlogController::class, 'getBlogSingle'])->name('blogsi
 //Booking 
 Route::get('product/booking', [ProductBookingController::class, 'store'])->name('product');
 Route::get('checkout', [ProductBookingController::class, 'show']);
+Route::get('orderproduct', [ProductBookingController::class, 'showOrderProduct'])->middleware('isLogin');
+
 
 Route::get('/{name?}',[MainController::class,'navigation']);
  //User order
@@ -124,6 +128,16 @@ Route::get('admin/addvoucher',[VoucherAdminController::class,'add']);
 Route::post('admin/voucheradmin', [VoucherAdminController::class, 'addVoucher'])->name('voucher.add');
 Route::get('admin/editvoucher',[VoucherAdminController::class,'edit'])->name('voucher.edit');
 Route::post('admin/editvoucher/edit',[VoucherAdminController::class,'editVoucher'])->name('voucheredit.edit');
+// User admin
+Route::get('admin/useradmin',[UserAminController::class,'show'])->name('show.user');
+Route::get('admin/adduser',[UserAminController::class,'add']);
+Route::post('admin/useradmin', [UserAminController::class, 'addUser'])->name('adduser.add');
+Route::get('admin/edituser',[UserAminController::class,'edit'])->name('user.edit');
+Route::post('admin/edituser/edit',[UserAminController::class,'editUser'])->name('useredit.edit');
+Route::get('admin/adduser/delete',[UserAminController::class,'deleteUser'])->name('user.delete');
+
+
+
 
 
 

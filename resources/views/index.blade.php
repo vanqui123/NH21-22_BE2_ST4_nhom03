@@ -176,7 +176,7 @@
                     <span><i class="ion-ios-cart"></i></span>
                   </button>
                   @else
-                  <button type="submit" style="border-radius: 50px;color: white; padding: 0px 0px;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;">
+                  <button  style="border-radius: 50px;color: white; padding: 0px 0px;background: #82ae46;border: 1px solid #82ae46;cursor: pointer;" type="submit">
                     <a class="buy-now d-flex justify-content-center align-items-center " href="{{route('login')}}"><i class="ion-ios-cart"></i></a>
                   </button>
                   @endif
@@ -191,7 +191,7 @@
                   </button>
                   @else
                   <button style="border-radius: 50px;color: white;background: #82ae46;border: 1px solid #82ae46; padding: 0px 0px;cursor: pointer;" type="submit">
-                    <a class="heart d-flex justify-content-center align-items-center " href="{{route('register')}}"> <i class="ion-ios-heart"></i> </a>
+                    <a class="heart d-flex justify-content-center align-items-center " href="{{route('login')}}"> <i class="ion-ios-heart"></i> </a>
                   </button>
                   @endif
                 </form>

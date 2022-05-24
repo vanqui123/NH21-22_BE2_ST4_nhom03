@@ -19,10 +19,10 @@ class CommentBlogController extends Controller
         );
        $commentBlog =  CommentBlog::create($data);
        if($commentBlog){
-        Alert::success('Success', 'Voucher Success');
+        Alert::success('Success', 'Add comment Success');
     }
     else{
-        Alert::error('Error', 'Voucher Error');
+        Alert::error('Error', 'Add comment Error');
     }
         return redirect()->back();
     }

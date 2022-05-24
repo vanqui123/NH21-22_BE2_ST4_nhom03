@@ -80,7 +80,11 @@ class ProductBookingController extends Controller
                 }
         return view('checkout',['data'=>$product_bookings,'voucher'=>$voucher]);
     }
-
+    public function showOrderProduct(){
+        $user_id = Auth::user()->id;
+        $product_bookings = ProductBooking::where('user_id', $user_id)->get();
+        return view('orderproduct',['data'=>$product_bookings]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
