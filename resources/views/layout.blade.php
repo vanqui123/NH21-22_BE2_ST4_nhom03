@@ -81,7 +81,6 @@ use App\Models\Cart;
               <a class="dropdown-item" href="{{url('checkout')}}">Checkout</a>
             </div>
           </li>
-          <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About</a></li>
           <li class="nav-item"><a href="{{url('blog')}}" class="nav-link">Blog</a></li>
           <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
           <li class="nav-item">

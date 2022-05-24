@@ -21,6 +21,6 @@ class isLogin
         return $next($request);
             
         }
-        return redirect('auth.login');
+        return redirect('login');
     }   
 }

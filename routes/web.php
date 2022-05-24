@@ -59,16 +59,16 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 Route::get('cart/updateDe', [CartController::class, 'decreaseQuantity'])->name('cart.decrease');
 Route::get('cart/updateIn', [CartController::class, 'increaseQuantity'])->name('cart.increase');
 //WishList
-Route::post('wishlist', [WishListController::class, 'addToWishList'])->name('wishlist.store');
-Route::get('wishlist', [WishListController::class, 'wishList'])->name('wistList.list');
-Route::get('wishlist/delete', [WishListController::class, 'destroy'])->name('wishlist.delete');
+Route::post('wishlist', [WishListController::class, 'addToWishList'])->name('wishlist.store')->middleware('isLogin');
+Route::get('wishlist', [WishListController::class, 'wishList'])->name('wistList.list')->middleware('isLogin');
+Route::get('wishlist/delete', [WishListController::class, 'destroy'])->name('wishlist.delete')->middleware('isLogin');
 // Comment Product
 Route::post('product-single/add', [CommentController::class, 'addComment'])->name('comment.store');
 //Comment Blog
 Route::post('blog-single/add', [CommentBlogController::class, 'addCommentBlog'])->name('commentblog.store');
 
 //Admin
-Route::get('/admin',[AdminController::class,'index'])->name('admin.index')->middleware('checkRole:admin');
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index')->middleware('isLogin')->middleware('checkRole:admin');
 //Contact
 Route::post('contact', [ContactController::class, 'addToContact'])->name('contact.add');
 Route::get('blog', [BlogController::class, 'getAllBlog']);
@@ -103,13 +103,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('edit/{id}',[ProtypeAdminController::class,'editProtype'])->name('editProtype');
     Route::post('update',[ProtypeAdminController::class,'postEdit'])->name('postEditProtype');
     Route::get('deleteprotype',[ProtypeAdminController::class,'deleteProtype'])->name('deleteProtype');
-
-
-    
-
-
-
-
 });
 
 
