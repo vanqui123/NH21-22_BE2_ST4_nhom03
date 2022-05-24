@@ -40,18 +40,18 @@
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
+                <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{route('admin.productadmin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{route('admin.productadmin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Product
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{route('admin.protypeadmin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Protype
                             </a>
@@ -59,13 +59,17 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Blog
                             </a>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{url('admin/contactadmin')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Contact
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="{{route('show.booking')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Cart
+                            </a>
+                            <a class="nav-link" href="{{route('show.voucher')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Voucher
                             </a>
                         </div>
                     </div>
@@ -106,11 +110,12 @@
                             {{$value->id}}
                           
                       </td>
-                      <td class="text-center">
+                      <td   class="text-center">
                       {{$value->title}}
                       </td>
                       <td class="text-center">
-                      {{$value->slug}}
+                      {{ substr(($value->slug),0,450)."..."}}
+                   
                       </td>
                       <td > <img style="width: 40%;" src="../images/{{$value->image}}" alt="">
                       </td>
@@ -123,7 +128,7 @@
                               <button type="submit" class="btn btn-info btn-sm"> Edit</button>   
                               <input type="hidden" name="id" value="{{$value->id}}" />   
                               </form>
-                          <form action="{{route('blog.delete')}}" method="get" enctype="multipart/form">
+                          <form  onclick="return confirm('Bạn có chắc chắn muốn xoá !!')" action="{{route('blog.delete')}}" method="get" enctype="multipart/form">
 									@csrf
                               <i class="fas fa-trash">
                               </i>

@@ -21,7 +21,6 @@ class CreateBlogCommentsTable extends Migration
                 onUpdate('cascade')->onDelete('cascade');
                 $table->bigInteger('blog_id');
                     $table->string('text_comment');
-                    $table->string('rate');
                     $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                     $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on
                     update CURRENT_TIMESTAMP'));

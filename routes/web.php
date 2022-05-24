@@ -82,7 +82,7 @@ Route::get('checkout', [ProductBookingController::class, 'show']);
 Route::get('/{name?}',[MainController::class,'navigation']);
  //User order
 Route::post('checkout', [UserOrderAdminController::class, 'addUserOrder'])->name('user_order.add');
-
+Route::post('/cart/voucher', [ProductBookingController::class, 'show'])->name('voucher.adduser');
 //Search func
 Route::get('/search/key', [SearchController::class, 'search'])->name('search');
 
