@@ -149,7 +149,7 @@
 
         <div class="product">
           <a href="#" class="img-prod"><img class="img-fluid" src="images/{{ $value->image}}" alt="Colorlib Template">
-            <span class="status">30%</span>
+            <span class="status">{{$value->product_quanity}}</span>
             <div class="overlay"></div>
           </a>
           <div class="text py-3 pb-4 px-3 text-center">

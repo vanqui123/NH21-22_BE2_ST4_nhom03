@@ -22,25 +22,36 @@ class Product extends Model
             ->get();
         return $products;
     }
-    public function getAllProducts($filters = [],$keywords= "")
+    public function getAllProducts($filters = [], $keywords = "", $sortByArr = null)
     {
         $products = DB::table($this->table)
             ->select('product.*', 'protypes.type_name as type_name')
-            ->join('protypes', 'product.type_id', '=', 'protypes.type_id')
-            ->orderBy('created_at', 'DESC');
-        
-        if(!empty($filters)){
+            ->join('protypes', 'product.type_id', '=', 'protypes.type_id');
+
+        $orderBy= 'created_at';
+        $orderType='desc';
+
+        if (!empty($sortByArr) && is_array($sortByArr)) {
+            if (!empty($sortByArr['sortBy']) && !empty($sortByArr['sortType'])) {
+                $orderBy = trim($sortByArr['sortBy']); 
+                $orderType = trim($sortByArr['sortType']);
+            }
+        }
+
+        $products = $products->orderBy($orderBy, $orderType);
+
+        if (!empty($filters)) {
             $products = $products->where($filters);
         }
 
-        if(!empty($keywords)){
-            $products=$products->where(function($query) use ($keywords){
-                $query->orWhere('name','like','%'.$keywords.'%');
-                $query->orWhere('description','like','%'.$keywords.'%');
+        if (!empty($keywords)) {
+            $products = $products->where(function ($query) use ($keywords) {
+                $query->orWhere('name', 'like', '%' . $keywords . '%');
+                $query->orWhere('description', 'like', '%' . $keywords . '%');
             });
         }
 
-        $products=$products->get();
+        $products = $products->paginate(10);
         return $products;
     }
     public function addProduct($data)

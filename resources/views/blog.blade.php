@@ -21,7 +21,7 @@
 					<div class="col-md-12 d-flex ftco-animate">
 					<form action="{{route('blogsingle.show')}}" method="get">
 						<div class="blog-entry align-self-stretch d-md-flex">
-							<a href="{{url('blog-single')}}" class="block-20" style="background-image: url('images/{{$value->image}}');">
+							<a href="blog-single/{{$value->id}}" class="block-20" style="background-image: url('images/{{$value->image}}');">
 							</a>
 							<div class="text d-block pl-md-4">
 								<div class="meta mb-3">

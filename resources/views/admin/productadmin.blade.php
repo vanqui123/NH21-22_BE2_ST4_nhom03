@@ -122,17 +122,23 @@
                 </div>
             </form>
         </div>
-        <table class="table table-bordered " style="margin-top: 200px;margin-left: 215px;">
+        <div class="row" style="position: absolute;left: 50%;top: 75px;z-index: 1;">
+			<div class="col md-12 mt-5">
+				{{$productList->links()}}
+			</div>
+		</div>
+    </div>
+        <table class="table table-bordered " style="margin-top: 175px;margin-left: 215px;">
             <thead>
                 <tr>
                     <th style="width: 0%;text-align: center;">
                         STT
                     </th>
                     <th style="width: 0%;text-align: center;">
-                        ID
+                    <a href="?sort-by=product_id&sort-type={{$sortType}}">ID</a> 
                     </th>
                     <th style="width: 3%;text-align: center;">
-                        Product Name
+                    <a href="?sort-by=name&sort-type={{$sortType}}">Product Name</a> 
                     </th>
                     <th style="width: 3%;text-align: center;">
                         Type name
@@ -147,7 +153,7 @@
                         Description
                     </th>
                     <th style="width: 2%;text-align: center;">
-                        Created at
+                    <a href="?sort-by=created_at&sort-type={{$sortType}}">Created at</a> 
                     </th>
                     <th style="width: 2%;text-align: center;">
                         Date expire

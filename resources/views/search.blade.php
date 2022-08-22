@@ -38,7 +38,7 @@
                 <div class="product">
                     <a href="#" class="img-prod">
                         <img class="img-fluid" src="../images/{{$product->image}}" alt="Colorlib Template">
-                        <span class="status">30%</span>
+                        <span class="status">{{$product->product_quanity}}</span>
                         <div class="overlay"></div>
                     </a>
                     <div class="text py-3 pb-4 px-3 text-center">

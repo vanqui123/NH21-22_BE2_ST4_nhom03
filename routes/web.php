@@ -45,7 +45,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 require __DIR__.'/auth.php';
 
-Route::get('blog-single/{id}',[BlogController::class,'get_detailBlog']);
+Route::get('blog-single/{id}',[BlogController::class,'getBlogSingle']);
 Route::get('/',[ProductController::class,'getAllProduct'])->name('index');
 Route::get('product-single/{product_id}',[ProductController::class,'getProductID']);
 Route::get('shop',[ProtypeController::class,'getAllProductType'])->name('shop')->name('shop');
